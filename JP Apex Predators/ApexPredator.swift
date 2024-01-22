@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct ApexPredator: Codable {
+struct ApexPredator: Codable, Identifiable {
     
     let id: Int
     let name: String
@@ -16,6 +17,15 @@ struct ApexPredator: Codable {
     let movieScenes: [MovieScene]
     let link: String
     
+    func typeOverlay() -> Color {
+        switch type {
+            
+        case "land": return .brown
+        case "air": return .teal
+        case "sea": return .blue
+        default: return .brown
+        }
+    }
 }
 
 struct MovieScene: Codable {
