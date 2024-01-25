@@ -9,6 +9,7 @@ import Foundation
 
 class PredatorController {
     
+    var allApexPredators: [ApexPredator] = []
     var apexPredators: [ApexPredator] = []
     
     init() {
@@ -23,11 +24,40 @@ class PredatorController {
                 let data = try Data(contentsOf: url) // yukarda oluşturduğum json'ı bu data isimi altında saklıyorum.
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase // eğer json dosyasında snakecase yani isimler _ ile yazılmışsa onu snakeCase'e çeviriyor.
-                apexPredators = try decoder.decode([ApexPredator].self, from: data)
+                allApexPredators = try decoder.decode([ApexPredator].self, from: data)
+                apexPredators = allApexPredators
             } catch {
                 print("Error decoding JSON data: \(error)")
             }
             
+        }
+    }
+    
+    func search(for searchTerm: String) -> [ApexPredator] {
+        if searchTerm.isEmpty {
+            return apexPredators
+        } else {
+            return apexPredators.filter { predator in
+                predator.name.localizedCaseInsensitiveContains(searchTerm)
+            }
+        }
+    }
+    
+    func sort(by alphabetical: Bool) {
+        apexPredators.sort { predator1, predator2 in
+            
+            alphabetical ? predator1.name < predator2.name : predator1.id < predator2.id
+            
+        }
+    }
+    
+    func filter(by type: PredatorType) {
+        if type == .all {
+            apexPredators = allApexPredators
+        } else {
+            apexPredators = allApexPredators.filter { predator in
+                predator.type == type
+            }
         }
     }
 }

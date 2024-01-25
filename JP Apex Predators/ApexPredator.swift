@@ -8,30 +8,64 @@
 import Foundation
 import SwiftUI
 
-struct ApexPredator: Codable, Identifiable {
+struct ApexPredator: Decodable, Identifiable {
     
     let id: Int
     let name: String
-    let type: String
+    let type: PredatorType
+    let latitude: Double
+    let longitude: Double
     let movies: [String]
     let movieScenes: [MovieScene]
     let link: String
     
-    func typeOverlay() -> Color {
-        switch type {
-            
-        case "land": return .brown
-        case "air": return .teal
-        case "sea": return .blue
-        default: return .brown
-        }
+    var image: String {
+        name.lowercased().replacingOccurrences(of: " ", with: "")
+    }
+    
+    
+    struct MovieScene: Decodable {
+        
+        let id: Int
+        let movie: String
+        let sceneDescription: String
+        
     }
 }
 
-struct MovieScene: Codable {
+enum PredatorType: String, Decodable, CaseIterable, Identifiable {
+    case all
+    case land
+    case air
+    case sea
     
-    let id: Int
-    let movie: String
-    let sceneDescription: String
+    var id: PredatorType {
+        self
+    }
     
+    var background: Color {
+        switch self {
+        case .land:
+            .brown
+        case .air:
+            .teal
+        case .sea:
+            .blue
+        case .all:
+            .black
+        }
+    }
+    
+    var icon: String {
+        switch self {
+        case .all:
+            "square.stack.3d.up.fill"
+        case .land:
+            "leaf.fill"
+        case .air:
+            "wind"
+        case .sea:
+            "drop.fill"
+        }
+    }
 }

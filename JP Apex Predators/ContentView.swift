@@ -9,23 +9,64 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let apController = PredatorController()
+    let predators = PredatorController()
+    
+    @State var searchText = ""
+    @State var alphabetical = false
+    @State var currentTypeSelection = PredatorType.all
+    
+    var filteredDinos: [ApexPredator] {
+        predators.filter(by: currentTypeSelection)
+        
+        predators.sort(by: alphabetical)
+        
+        return predators.search(for: searchText)
+    }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
-                ForEach(apController.apexPredators) { predator in
+                ForEach(filteredDinos) { predator in
                     NavigationLink(destination: Text("Dino details will appeir here")) {
                         PredatorRow(predator: predator)
                     }
                 }
             }
             .navigationTitle("Apex Predators")
+            .searchable(text: $searchText)
+            .autocorrectionDisabled()
+            .animation(.default, value: searchText)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        withAnimation {
+                            alphabetical.toggle()
+                        }
+                    },
+                           label: {
+                        Image(systemName: alphabetical ? "film" : "textformat")
+                            .symbolEffect(.bounce, value: alphabetical)
+                        // ? anlamı = alphabetical doğru ise... film kullan : anlamı doğru değil ise... textformat kullan. Ve bu şekilde yazılınca adı Ternary if statement oluyor.
+                    })
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Picker("Filter", selection: $currentTypeSelection.animation()) {
+                            ForEach(PredatorType.allCases) { type in
+                                Label(type.rawValue.capitalized, systemImage: type.icon)
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                    }
+                }
+            }
         }
+        .preferredColorScheme(.dark)
     }
 }
 
 #Preview {
     ContentView()
-        .preferredColorScheme(.dark)
 }

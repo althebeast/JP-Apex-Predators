@@ -13,7 +13,7 @@ struct PredatorRow: View {
     
     var body: some View {
         HStack{
-            Image(predator.name.lowercased().filter { $0 != " "})
+            Image(predator.image)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
@@ -23,22 +23,20 @@ struct PredatorRow: View {
                 Text(predator.name)
                     .fontWeight(.bold)
                 
-                Text(predator.type.capitalized)
+                Text(predator.type.rawValue.capitalized)
                     .font(.subheadline)
                     .fontWeight(.bold)
                     .padding(.horizontal, 13)
                     .padding(.vertical, 5)
-                    .overlay{
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(predator.typeOverlay().opacity(0.40))
-                    }
+                    .background(predator.type.background)
+                    .clipShape(.capsule)
             }
         }
     }
 }
 
 #Preview {
-    PredatorRow(predator: ApexPredator(id: 3, name: "Tryannosaurus Rex", type: "land", movies: ["Jurassic Park", "Jurassic Park 2"], movieScenes: [MovieScene(id: 3, movie: "Jurassic Park III", sceneDescription: "The film starts off with Dr. Grant and his colleague Billy discussing a Velociraptor’s communicative intelligence. Billy uses a 3D printer to replicate the larynx of a Velociraptor. When Dr. Grant and the group get stranded on the island, his colleague Billy steals two Velociraptor eggs unknown to the others. When the survivors reach the abandoned laboratory, a raptor sneaks in there and attacks Amanda Kirby. The group runs to the cages and traps one of them. We see its communicative abilities when it actually calls the other Velociraptors for help. The survivors run through a group of Corythosaurus and Parasaurolophus and into the forest. Amanda, Paul and Billy hide in the trees while Dr. Grant is still on the ground. The raptors injure Udesky and set a trap to lure the others down from the tree. Amanda Kirby almost falls from the tree but is saved and Dr. Grant is confronted by a Velociraptor. Eric Kirby comes to his rescue and sprays a gas can and the raptors flee.\n\nWe then see the raptors at the climax of the movie when the survivors are making their way back to the beach. The Velociraptors surround the group and the female raptor challenges Amanda Kirby for the eggs that Billy stole earlier. She hands over the eggs and Dr. Grant uses the imitation raptor larynx to fool the raptors into running off. The survivors then escape the island.")], link: "www.google.com.tr"))
+    PredatorRow(predator: ApexPredator(id: 1, name: "apex", type: PredatorType(rawValue: "land")!, latitude: 62.1, longitude: 63.2, movies: ["juarraic1, jurassic2"], movieScenes: [ApexPredator.MovieScene(id: 1, movie: "juras", sceneDescription: "The Brachiosaurus was the first dinosaur encountered by the endorsement team hired by InGen to make sure Jurassic Park was safe for visitors. The entire team was amazed. Dr. Alan Grant and Dr. Ellie Sattler were the most awestruck of the group because the Brachiosaurus was terrestrial, not semi-aquatic swamp dwellers they had thought they were.\n\nWhen Dennis Nedry disabled Jurassic Park's security systems, the security fences that kept the prehistoric animals from escaping their enclosures were disabled as well, Brachiosaurus was one of the dinosaurs that were able to roam freely.\n\nAfter fleeing from the Tyrannosaur Paddock, Dr. Alan Grant and Tim and Lex Murphy climbed a tree where saw a herd of Brachiosaurus feeding on the nearby trees, hooting in the distance. Dr. Alan Grant heard their calls and attempted to imitate them to successful results. The following morning, a Brachiosaurus sick with a cold or a similar disease fed on the tree that the three humans were sleeping in, waking them up. Lex panicked at the sight of the dinosaur, believing it to be dangerous at first, but she soon calmed down when Dr. Alan Grant and her brother showed her that it was harmless. Dr. Grant fed the Brachiosaurus a nearby branch on the tree and Tim Murphy even pet it. However, when Lex attempted to pet the dinosaur like her brother did, the Brachiosaurus responded by sneezing on her. The humans and the Brachiosaurus later went their separate ways.\n\nIt is unknown what happened to the Brachiosaur populations on Isla Nublar after the Isla Nublar Incident of 1993.\n\nHowever, according to information revealed by InGen reports, there were at least 5 surviving Brachiosaurus on the island by October 1994. One died due to malnutrition.")], link: "google.com"))
         .preferredColorScheme(.dark)
         .previewLayout(.sizeThatFits)
 }
