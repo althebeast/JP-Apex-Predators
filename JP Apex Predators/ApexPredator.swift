@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import MapKit
+import TipKit
 
 struct ApexPredator: Decodable, Identifiable {
     
