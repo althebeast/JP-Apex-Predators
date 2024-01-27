@@ -2,7 +2,20 @@
   "colors" : [
     {
       "color" : {
-        "platform" : "watchos",
+        "platform" : "tvos",
+        "reference" : "labelColor"
+      },
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "platform" : "tvos",
         "reference" : "labelColor"
       },
       "idiom" : "universal"
