@@ -17,6 +17,14 @@ struct PredatorCard: View {
                 .background {
                     Image(predator.type.rawValue)
                         .resizable()
+                        .overlay {
+                            LinearGradient(stops: [
+                                Gradient.Stop(color: .clear, location: 0.7),
+                                Gradient.Stop(color: .black, location: 1)
+                            ],
+                                           startPoint: .top,
+                                           endPoint: .bottom)
+                        }
                 }
                 .foregroundStyle(.clear)
                 .clipShape(.rect(cornerRadius: 15))
@@ -41,6 +49,7 @@ struct PredatorCard: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 300)
+                    .shadow(color: .white, radius: 5)
             }
             .foregroundStyle(.white)
             .padding()
