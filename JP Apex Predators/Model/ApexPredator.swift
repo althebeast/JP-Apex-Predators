@@ -79,7 +79,7 @@ enum PredatorType: String, Decodable, CaseIterable, Identifiable {
 }
 
 
-enum PredatorSound: String, Decodable, CaseIterable {
+enum PredatorSound: String, Decodable {
     case velociraptor
     case brachiosaurus
     case tyrannosaurusrex
@@ -101,5 +101,52 @@ enum PredatorSound: String, Decodable, CaseIterable {
     case atrociraptor
     case therizinosaurus
     case pyroraptor
+    
+    var sounds: String? {
+        switch self {
+        case .velociraptor:
+            "velociraptor.mp3"
+        case .brachiosaurus:
+            "brachiosaurus.mp3"
+        case .tyrannosaurusrex:
+            "tyrannosaurusrex.mp3"
+        case .dilophosaurus:
+            "dilophosaurus.mp3"
+        case .compsognathus:
+            "compsognathus.mp3"
+        case .stegosaurus:
+            "stegosaurus.mp3"
+        case .pachycephalosaurus:
+            "pachycephalosaurus.mp3"
+        case .pteranodon:
+            "pteranodon.mp3"
+        case .spinosaurus:
+            "spinosaurus.mp3"
+        case .indominusrex:
+            nil
+        case .mosasaurus:
+            nil
+        case .dimorphodon:
+            "dimorphodon.mp3"
+        case .baryonyx:
+            nil
+        case .carnotaurus:
+            "carnotaurus.mp3"
+        case .allosaurus:
+            "allosaurus.mp3"
+        case .indoraptor:
+            "indoraptor.mp3"
+        case .quetzalcoatlus:
+            nil
+        case .giganotosaurus:
+            "giganotosaurus.mp3"
+        case .atrociraptor:
+            nil
+        case .therizinosaurus:
+            nil
+        case .pyroraptor:
+            nil
+        }
+    }
     
 }

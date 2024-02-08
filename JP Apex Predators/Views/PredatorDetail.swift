@@ -64,11 +64,15 @@ struct PredatorDetail: View {
                         
                         Spacer()
                         
-                        Button {
-                            play(sound: "\(predator.sound.rawValue).mp3")
-                        } label: {
-                            Image(systemName: "waveform")
-                                .font(.largeTitle)
+                        if predator.sound.sounds != nil {
+                            Button {
+                                play(sound: "\(predator.sound.sounds ?? "velociraptor.mp3")")
+                            } label: {
+                                Image(systemName: "waveform")
+                                    .font(.largeTitle)
+                            }
+                        } else {
+                            
                         }
                     }
                     
