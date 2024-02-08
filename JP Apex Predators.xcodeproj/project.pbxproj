@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8421FBEA2B75612A009228BC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8421FBE92B75612A009228BC /* Launch Screen.storyboard */; };
 		844436312B62E157001E4DEE /* PredatorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844436302B62E157001E4DEE /* PredatorDetail.swift */; };
 		8447D06A2B5DCA3900650BDD /* JP_Apex_PredatorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447D0692B5DCA3900650BDD /* JP_Apex_PredatorsApp.swift */; };
 		8447D06C2B5DCA3900650BDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447D06B2B5DCA3900650BDD /* ContentView.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8421FBE92B75612A009228BC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		844436302B62E157001E4DEE /* PredatorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorDetail.swift; sourceTree = "<group>"; };
 		8447D0662B5DCA3900650BDD /* JP Apex Predators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JP Apex Predators.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8447D0692B5DCA3900650BDD /* JP_Apex_PredatorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JP_Apex_PredatorsApp.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				84B91D902B74A6AF007508CE /* Views */,
 				84B91D772B749BC3007508CE /* Sounds */,
 				848E72DC2B60C9E50030AAA8 /* jpapexpredators.json */,
+				8421FBE92B75612A009228BC /* Launch Screen.storyboard */,
 				8447D06D2B5DCA3E00650BDD /* Assets.xcassets */,
 				8447D06F2B5DCA3E00650BDD /* JP_Apex_Predators.entitlements */,
 				8447D0702B5DCA3E00650BDD /* Preview Content */,
@@ -314,6 +317,7 @@
 				84B91D8F2B74A5E2007508CE /* dilophosaurus.mp3 in Resources */,
 				84B91D8B2B74A5E2007508CE /* spinosaurus.mp3 in Resources */,
 				84B91D8E2B74A5E2007508CE /* brachiosaurus.mp3 in Resources */,
+				8421FBEA2B75612A009228BC /* Launch Screen.storyboard in Resources */,
 				84B91D882B74A5E2007508CE /* indoraptor.mp3 in Resources */,
 				84B91D872B74A5E2007508CE /* giganotosaurus.mp3 in Resources */,
 				848E72DD2B60C9E50030AAA8 /* jpapexpredators.json in Resources */,
@@ -495,6 +499,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -535,6 +540,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

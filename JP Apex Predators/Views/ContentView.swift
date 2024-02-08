@@ -30,7 +30,7 @@ struct ContentView: View {
                 ScrollView(showsIndicators: false) {
                     ForEach(filteredDinos) { predator in
                             VStack {
-                                NavigationLink(destination: PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 30000)))) {
+                                NavigationLink(destination: PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 3000)))) {
                                     PredatorCard(predator: predator)
                                 }
                             }
