@@ -8,6 +8,7 @@
 import SwiftUI
 import MapKit
 import TipKit
+import Subsonic
 
 struct PredatorDetail: View {
     
@@ -17,6 +18,7 @@ struct PredatorDetail: View {
     @State var position: MapCameraPosition
     
     var body: some View {
+        
         GeometryReader { geo in
             ScrollView(showsIndicators: false) {
                 ZStack(alignment: .bottomTrailing) {
@@ -54,56 +56,67 @@ struct PredatorDetail: View {
                     try? Tips.configure()
                 }
                     
-                    VStack(alignment: .leading){
-                        // Dino name
+                VStack(alignment: .leading){
+                    // Dino name
+                    HStack {
                         Text(predator.name)
                             .font(.largeTitle)
                         
-                        //Current location
-                        NavigationLink {
-                            PredatorMap(position: .camera(MapCamera(centerCoordinate: predator.location,
-                                                                    distance: 1000,
-                                                                    heading: 250,
-                                                                    pitch: 80)))
+                        Spacer()
+                        
+                        Button {
+                            play(sound: "\(predator.sound.rawValue).mp3")
                         } label: {
-                            Map(position: $position) {
-                                Annotation(predator.name, coordinate: predator.location) {
-                                    Image(systemName: "mappin.and.ellipse")
-                                        .font(.largeTitle)
-                                        .imageScale(.large)
-                                        .symbolEffect(.pulse)
-                                }
-                                .annotationTitles(.hidden)
-                            }
-                            .frame(height: 125)
-                            .clipShape(.rect(cornerRadius: 15))
-                            .overlay(alignment: .trailing) {
-                                Image(systemName: "greaterthan")
+                            Image(systemName: "waveform")
+                                .font(.largeTitle)
+                        }
+                    }
+                    
+                    //Current location
+                    NavigationLink {
+                        PredatorMap(position: .camera(MapCamera(centerCoordinate: predator.location,
+                                                                distance: 1000,
+                                                                heading: 250,
+                                                                pitch: 80)))
+                    } label: {
+                        Map(position: $position) {
+                            Annotation(predator.name, coordinate: predator.location) {
+                                Image(systemName: "mappin.and.ellipse")
+                                    .font(.largeTitle)
                                     .imageScale(.large)
-                                    .font(.title3)
-                                    .padding(.trailing, 5)
+                                    .symbolEffect(.pulse)
                             }
-                            .overlay(alignment: .topLeading) {
-                                Text("Current Location")
-                                    .padding([.leading, .bottom], 5)
-                                    .padding(.trailing, 8)
-                                    .background(.black.opacity(0.33))
-                                    .clipShape(.rect(bottomLeadingRadius: 15))
-                            }
-                            .clipShape(.rect(cornerRadius: 15))
+                            .annotationTitles(.hidden)
                         }
-                        
-                        //Appears in
-                        Text("Appears In:")
-                            .font(.title3)
-                            .padding(.top)
-                        
-                        ForEach(predator.movies, id: \.self) { movie in
-                            Text("•" + movie)
-                                .font(.subheadline)
+                        .frame(height: 125)
+                        .clipShape(.rect(cornerRadius: 15))
+                        .overlay(alignment: .trailing) {
+                            Image(systemName: "greaterthan")
+                                .imageScale(.large)
+                                .font(.title3)
+                                .padding(.trailing, 5)
                         }
-                        
-                        //Movie moments
+                        .overlay(alignment: .topLeading) {
+                            Text("Current Location")
+                                .padding([.leading, .bottom], 5)
+                                .padding(.trailing, 8)
+                                .background(.black.opacity(0.33))
+                                .clipShape(.rect(bottomLeadingRadius: 15))
+                        }
+                        .clipShape(.rect(cornerRadius: 15))
+                    }
+                    
+                    //Appears in
+                    Text("Appears In:")
+                        .font(.title3)
+                        .padding(.top)
+                    
+                    ForEach(predator.movies, id: \.self) { movie in
+                        Text("•" + movie)
+                            .font(.subheadline)
+                    }
+                    
+                    //Movie moments
                         Text("Movie Moments")
                             .font(.title)
                             .padding(.top, 15)

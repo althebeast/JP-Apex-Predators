@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 import MapKit
 import TipKit
+import Subsonic
 
 struct ApexPredator: Decodable, Identifiable {
     
     let id: Int
     let name: String
     let type: PredatorType
+    let sound: PredatorSound
     let latitude: Double
     let longitude: Double
     let movies: [String]
@@ -74,4 +76,30 @@ enum PredatorType: String, Decodable, CaseIterable, Identifiable {
             "drop.fill"
         }
     }
+}
+
+
+enum PredatorSound: String, Decodable, CaseIterable {
+    case velociraptor
+    case brachiosaurus
+    case tyrannosaurusrex
+    case dilophosaurus
+    case compsognathus
+    case stegosaurus
+    case pachycephalosaurus
+    case pteranodon
+    case spinosaurus
+    case indominusrex
+    case mosasaurus
+    case dimorphodon
+    case baryonyx
+    case carnotaurus
+    case allosaurus
+    case indoraptor
+    case quetzalcoatlus
+    case giganotosaurus
+    case atrociraptor
+    case therizinosaurus
+    case pyroraptor
+    
 }

@@ -3,6 +3,7 @@
 		"id": 1,
 		"name": "Velociraptor",
         "type": "land",
+        "sound": "velociraptor",
         "latitude": 32.8236,
         "longitude": -96.7166,
 		"movies": [
@@ -51,6 +52,7 @@
         "id": 2,
         "name": "Brachiosaurus",
         "type": "land",
+        "sound": "brachiosaurus",
         "latitude": 41.1403,
         "longitude": -104.8202,
         "movies": [
@@ -87,6 +89,7 @@
 		"id": 3,
 		"name": "Tyrannosaurus Rex",
 		"type": "land",
+        "sound": "tyrannosaurusrex",
         "latitude": 36.1129,
         "longitude": -115.1765,
 		"movies": [
@@ -135,6 +138,7 @@
 		"id": 4,
 		"name": "Dilophosaurus",
 		"type": "land",
+        "sound": "dilophosaurus",
         "latitude": 35.0875713,
         "longitude": -106.6656291,
 		"movies": [
@@ -159,6 +163,7 @@
 		"id": 5,
 		"name": "Compsognathus",
 		"type": "land",
+        "sound": "compsognathus",
         "latitude": 44.35894,
         "longitude": -100.34366,
 		"movies": [
@@ -195,6 +200,7 @@
 		"id": 6,
 		"name": "Stegosaurus",
 		"type": "land",
+        "sound": "stegosaurus",
         "latitude": 37.3346,
         "longitude": -122.0090,
 		"movies": [
@@ -237,6 +243,7 @@
 		"id": 7,
 		"name": "Pachycephalosaurus",
 		"type": "land",
+        "sound": "pachycephalosaurus",
         "latitude": 35.794540,
         "longitude": -95.310935,
 		"movies": [
@@ -261,6 +268,7 @@
 		"id": 8,
 		"name": "Pteranodon",
 		"type": "air",
+        "sound": "pteranodon",
         "latitude": 32.7848,
         "longitude": -96.8025,
 		"movies": [
@@ -303,6 +311,7 @@
 		"id": 9,
 		"name": "Spinosaurus",
 		"type": "land",
+        "sound": "spinosaurus",
         "latitude": 39.7374974,
         "longitude": -104.9833087,
 		"movies": [
@@ -321,6 +330,7 @@
 		"id": 10,
 		"name": "Indominus Rex",
 		"type": "land",
+        "sound": "indominusrex",
         "latitude": 28.5729,
         "longitude": -80.6490,
 		"movies": [
@@ -339,6 +349,7 @@
 		"id": 11,
 		"name": "Mosasaurus",
 		"type": "sea",
+        "sound": "mosasaurus",
         "latitude": 65.53627,
         "longitude": -168.08284,
 		"movies": [
@@ -369,6 +380,7 @@
 		"id": 12,
 		"name": "Dimorphodon",
 		"type": "air",
+        "sound": "dimorphodon",
         "latitude": 40.7484,
         "longitude": -73.9857,
 		"movies": [
@@ -393,6 +405,7 @@
         "id": 13,
         "name": "Baryonyx",
         "type": "land",
+        "sound": "baryonyx",
         "latitude": 43.4927,
         "longitude": -112.0408,
         "movies": [
@@ -417,6 +430,7 @@
         "id": 14,
         "name": "Carnotaurus",
         "type": "land",
+        "sound": "carnotaurus",
         "latitude": 36.8791,
         "longitude": -111.5104,
         "movies": [
@@ -441,6 +455,7 @@
         "id": 15,
         "name": "Allosaurus",
         "type": "land",
+        "sound": "allosaurus",
         "latitude": 34.1381,
         "longitude": -118.3534,
         "movies": [
@@ -465,6 +480,7 @@
 		"id": 16,
 		"name": "Indoraptor",
 		"type": "land",
+        "sound": "indoraptor",
         "latitude": 35.540698,
         "longitude": -82.552277,
 		"movies": [
@@ -483,6 +499,7 @@
         "id": 17,
         "name": "Quetzalcoatlus",
         "type": "air",
+        "sound": "quetzalcoatlus",
         "latitude": 40.6892,
         "longitude": -74.0445,
         "movies": [
@@ -501,6 +518,7 @@
         "id": 18,
         "name": "Giganotosaurus",
         "type": "land",
+        "sound": "giganotosaurus",
         "latitude": 38.7436,
         "longitude": -109.4993,
         "movies": [
@@ -519,6 +537,7 @@
         "id": 19,
         "name": "Atrociraptor",
         "type": "land",
+        "sound": "atrociraptor",
         "latitude": 40.2888,
         "longitude": -76.6547,
         "movies": [
@@ -537,6 +556,7 @@
         "id": 20,
         "name": "Therizinosaurus",
         "type": "land",
+        "sound": "therizinosaurus",
         "latitude": 40.9857,
         "longitude": -111.8949,
         "movies": [
@@ -555,6 +575,7 @@
         "id": 21,
         "name": "Pyroraptor",
         "type": "land",
+        "sound": "pyroraptor",
         "latitude": 58.4409,
         "longitude": -134.5459,
         "movies": [
