@@ -34,34 +34,8 @@
 		84B91D8F2B74A5E2007508CE /* dilophosaurus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D832B74A5E2007508CE /* dilophosaurus.mp3 */; };
 		84BAD8152B74840A00404057 /* PredatorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAD8142B74840A00404057 /* PredatorCard.swift */; };
 		84C51F5C2B64BCEB009A45E9 /* PredatorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C51F5B2B64BCEB009A45E9 /* PredatorMap.swift */; };
-		84C51F622B64C51E009A45E9 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C51F612B64C51E009A45E9 /* Stickers.xcassets */; };
-		84C51F662B64C51E009A45E9 /* ApexStickers.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 84C51F5F2B64C517009A45E9 /* ApexStickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84C51F6E2B64CC6E009A45E9 /* DetailTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C51F6D2B64CC6E009A45E9 /* DetailTip.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		84C51F642B64C51E009A45E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8447D05E2B5DCA3800650BDD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84C51F5E2B64C517009A45E9;
-			remoteInfo = ApexStickers;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		84C51F6A2B64C51E009A45E9 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				84C51F662B64C51E009A45E9 /* ApexStickers.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8421FBE92B75612A009228BC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -93,8 +67,6 @@
 		84BAD8142B74840A00404057 /* PredatorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorCard.swift; sourceTree = "<group>"; };
 		84C51F5B2B64BCEB009A45E9 /* PredatorMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorMap.swift; sourceTree = "<group>"; };
 		84C51F5F2B64C517009A45E9 /* ApexStickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ApexStickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		84C51F612B64C51E009A45E9 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
-		84C51F632B64C51E009A45E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C51F6D2B64CC6E009A45E9 /* DetailTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				8447D0682B5DCA3900650BDD /* JP Apex Predators */,
-				84C51F602B64C517009A45E9 /* ApexStickers */,
 				8447D0672B5DCA3900650BDD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -211,15 +182,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		84C51F602B64C517009A45E9 /* ApexStickers */ = {
-			isa = PBXGroup;
-			children = (
-				84C51F612B64C51E009A45E9 /* Stickers.xcassets */,
-				84C51F632B64C51E009A45E9 /* Info.plist */,
-			);
-			path = ApexStickers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,12 +192,10 @@
 				8447D0622B5DCA3900650BDD /* Sources */,
 				8447D0632B5DCA3900650BDD /* Frameworks */,
 				8447D0642B5DCA3900650BDD /* Resources */,
-				84C51F6A2B64C51E009A45E9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				84C51F652B64C51E009A45E9 /* PBXTargetDependency */,
 			);
 			name = "JP Apex Predators";
 			packageProductDependencies = (
@@ -330,7 +290,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C51F622B64C51E009A45E9 /* Stickers.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,14 +313,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		84C51F652B64C51E009A45E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84C51F5E2B64C517009A45E9 /* ApexStickers */;
-			targetProxy = 84C51F642B64C51E009A45E9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8447D0732B5DCA3E00650BDD /* Debug */ = {
@@ -504,15 +455,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperensarisan.JP-Apex-Predators";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,15 +497,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperensarisan.JP-Apex-Predators";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
