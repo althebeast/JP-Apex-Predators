@@ -120,6 +120,16 @@ struct PredatorDetail: View {
                         .clipShape(.rect(cornerRadius: 15))
                     }
                     
+                    //dinosaur characteristics
+                    Text("Dinosaur Characteristics:")
+                        .font(.title3)
+                        .padding(.top)
+                    
+                    ForEach(predator.specs, id: \.self) { specs in
+                        Text("•" + specs)
+                            .font(.subheadline)
+                    }
+                    
                     //Appears in
                     Text("Appears In:")
                         .font(.title3)

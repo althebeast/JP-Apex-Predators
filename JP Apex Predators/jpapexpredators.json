@@ -14,6 +14,14 @@
 			"Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
 		],
+		"specs": [
+			"Name Meaning: Swift thief/robber",
+			"Code Name: Raptor",
+			"Height: 0.5 meter (1.5 feet)",
+			"Weight: 7-13 kg (15-30 pounds",
+			"Location: Mongolia and China",
+			"Birth Type: Egg"
+		],
 		"movie_scenes": [
 			{
                 "id": 1,
@@ -61,6 +69,15 @@
             "Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Arm lizard/reptile",
+			"Code Name: Brach, Brachi, or Brachio",
+			"Height: 12-13 meters (40-43 feet)",
+			"Length: 26-27 meters (86-90 feet)",
+			"Weight: 38-64 tons (76,000-128,000 lbs)",
+			"Location: North America and Portugal and Tanzania",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -99,6 +116,15 @@
 			"Jurassic World",
 			"Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+		],
+		"specs": [
+			"Name Meaning: Tyrant lizard/reptile King",
+			"Code Name: T.rex",
+			"Height: 3.66-4 meters (12-13 feet at the hips)",
+			"Length: 12.3-13.2 meters (40.4-43.3 feet)",
+			"Weight: 9.8 tons/19,555 lbs",
+			"Location: North America",
+			"Birth Type: Egg"
 		],
 		"movie_scenes": [
 			{
@@ -145,6 +171,15 @@
 			"Jurassic Park",
             "Jurassic World: Dominion"
 		],
+		"specs": [
+			"Name Meaning: Lizard/Reptile with two/Double crests/Ridges",
+			"Code Name: Spitter or Dilo",
+			"Height: 3 meters (10 feet)",
+			"Length: 6 meters (20 feet)",
+			"Weight: 1 ton (2,000 lbs)",
+			"Location: Arizona",
+			"Birth Type: Egg"
+		],
 		"movie_scenes": [
 			{
                 "id": 1,
@@ -171,6 +206,15 @@
 			"Jurassic Park III",
 			"Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+		],
+		"specs": [
+			"Name Meaning: Elegant/Pretty/Refined/Dainty jaw",
+			"Code Name: Compy",
+			"Height: 30 cm (12 inches)",
+			"Length: 1 meter (3 ft)",
+			"Weight: 0.83-3.5 kg (1.8-7 .7 lbs)",
+			"Location: Europe",
+			"Birth Type: Egg"
 		],
 		"movie_scenes": [
 			{
@@ -209,6 +253,15 @@
 			"Jurassic World",
 			"Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+		],
+		"specs": [
+			"Name Meaning: Roof/Roofed/Cover/Covered lizard/Reptile",
+			"Code Name: Stego",
+			"Height: 4 meters (13 feet)",
+			"Length: 10 meters (33 feet)",
+			"Weight: 4 tons (8,000 pounds)",
+			"Location: North America",
+			"Birth Type: Egg"
 		],
 		"movie_scenes": [
 			{
@@ -250,6 +303,15 @@
 			"The Lost World: Jurassic Park",
 			"Jurassic World"
 		],
+		"specs": [
+			"Name Meaning: Thick-headed lizard/Reptile",
+			"Code Name: Pachy, Ram Head or Headbutter",
+			"Height: 2 meters (6 feet)",
+			"Length: 5 meters (16 feet)",
+			"Weight: 450 kilograms (990 pounds)",
+			"Location: North America",
+			"Birth Type: Egg"
+		],
 		"movie_scenes": [
 			{
                 "id": 1,
@@ -277,6 +339,12 @@
 			"Jurassic World",
 			"Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+		],
+		"specs": [
+			"Wingspan: 5.6 m (18 ft)",
+			"Length: 2.6 m (8.5 ft)",
+			"Weight: 50 kg (110 lb)",
+			"Location: North America"
 		],
 		"movie_scenes": [
 			{
@@ -317,6 +385,15 @@
 		"movies": [
 			"Jurassic Park III"
 		],
+		"specs": [
+			"Name Meaning: Spine/Spined/Spiny lizard/Reptile",
+			"Code Name: Spino, sliced or Asset 87",
+			"Height: 5-6 meters (16-20 feet)",
+			"Length: 14 meters (45.9 feet)",
+			"Weight: 7-8 tons (15,432-17,637 lbs)",
+			"Location: North Africa",
+			"Birth Type: Egg"
+		],
 		"movie_scenes": [
 			{
                 "id": 1,
@@ -335,6 +412,13 @@
         "longitude": -80.6490,
 		"movies": [
 			"Jurassic World"
+		],
+		"specs": [
+			"Name Meaning: Indomitable/Fierce/Untamable King",
+			"Code Name: I.rex",
+			"Height: 6.7 meters (21.9 ft) (fully grown)",
+			"Length: 12.2 meters (40 ft)",
+			"Birth Type: Egg"
 		],
 		"movie_scenes": [
 			{
@@ -356,6 +440,11 @@
 			"Jurassic World",
 			"Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+		],
+		"specs": [
+			"Code Name: Great Animal of Maastricht",
+			"Length: 17.1 meters (56 ft)",
+			"Location: Atlantic Ocean"
 		],
 		"movie_scenes": [
 			{
@@ -387,6 +476,11 @@
 			"Jurassic World",
             "Jurassic World: Dominion"
 		],
+		"specs": [
+			"Name Meaning: Two-form Tooth",
+			"Wingspan: 1.45 meters (4.6 feet)",
+			"Length: 1 meter (3.3 feet)"
+		],
 		"movie_scenes": [
 			{
                 "id": 1,
@@ -412,6 +506,15 @@
             "Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Heavy claw",
+			"Code Name: Bary",
+			"Height: 2.5 meters (at the hip)",
+			"Length: 7.5-10 meters (24-33 feet)",
+			"Weight: 1.3-2.2 tons (2,645-4,400 lbs)",
+			"Location: England, Spain, France, Portugal, and Belgium",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -437,6 +540,15 @@
             "Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Meat/Meat-eating/Carnivorous bull",
+			"Code Name: Carnivore",
+			"Height: 3-3.6 meters (10-12 feet)",
+			"Length: 9 meters (30 feet)",
+			"Weight: 2 ton (4,000 lbs)",
+			"Location: Argentina (South America)",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -462,6 +574,15 @@
             "Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Different/Other lizard/Fresh lizard",
+			"Code Name: Allo",
+			"Height: 3.8 meters (12.5 feet)",
+			"Length: 12.1 meters (39.7 feet)",
+			"Weight: 2.3 tons (4,600 lbs)",
+			"Location: North America, Africa, Europe and Australia",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -486,6 +607,15 @@
 		"movies": [
 			"Jurassic World: Fallen Kingdom"
 		],
+		"specs": [
+			"Name Meaning: Stealth Fighter Jet of Dinosaurs",
+			"Code Name: I.raptor",
+			"Height: 3.1 meters (10.17 ft)",
+			"Length: 7.3 meters (23.95 ft)",
+			"Weight: 1.1 tons (2,200 lbs)",
+			"Location: Northern California",
+			"Birth Type: Egg"
+		],
 		"movie_scenes": [
 			{
                 "id": 1,
@@ -505,6 +635,10 @@
         "movies": [
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Aztec feathered serpent god Quetzalcoatl",
+			"Wingspan: 10 meters (33 ft)"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -524,6 +658,15 @@
         "movies": [
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Giant southern lizard/Reptile",
+			"Code Name: Giga",
+			"Height: 5.5 meters (18.1 feet)",
+			"Length: 15.5 meters (51 feet)",
+			"Weight: 9 tons (18,078 lbs)",
+			"Location: Argentina",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -543,6 +686,14 @@
         "movies": [
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Savage/Frightening/Fierce/Cruel/Atrocious thief",
+			"Height: 0.5 meter (1.6 feet)",
+			"Length: 2 meters (6.6 feet)",
+			"Weight: 15 kg (33 pounds)",
+			"Location: Alberta, Canada",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -562,6 +713,13 @@
         "movies": [
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Scythe lizard/Reptile",
+			"Height: 5-6 meters (16-20 feet)",
+			"Length: 9-12 meters (30-40 feet)",
+			"Weight: 6 tons (12,000 lbs)",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
@@ -581,6 +739,14 @@
         "movies": [
             "Jurassic World: Dominion"
         ],
+        "specs": [
+			"Name Meaning: Fire thief",
+			"Height: 1.69 metres (5.57 feet)",
+			"Length: 2.43 metres (8 feet)",
+			"Weight: 181 kg (400 lbs)",
+			"Location: Europe",
+			"Birth Type: Egg"
+		],
         "movie_scenes": [
             {
                 "id": 1,
