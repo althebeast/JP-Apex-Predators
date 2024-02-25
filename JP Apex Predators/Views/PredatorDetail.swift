@@ -42,13 +42,23 @@ struct PredatorDetail: View {
                             .scaledToFit()
                             .scaleEffect(x: -1)
                     } label: {
-                        Image(predator.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geo.size.width/1.5, height: geo.size.height/3)
-                            .scaleEffect(x: -1)
-                            .shadow(color: .black, radius: 7)
-                            .offset(y: 20)
+                        if geo.size.height > geo.size.width {
+                            Image(predator.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width/1.5, height: geo.size.height/3)
+                                .scaleEffect(x: -1)
+                                .shadow(color: .black, radius: 7)
+                                .offset(y: 20)
+                        } else {
+                            Image(predator.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width/1, height: geo.size.height/0.7)
+                                .scaleEffect(x: -1)
+                                .shadow(color: .black, radius: 7)
+                                .offset(y: 20)
+                        }
                     }
                     .popoverTip(imageTip, arrowEdge: .trailing)
                 }
