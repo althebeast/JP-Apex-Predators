@@ -9,9 +9,10 @@ import SwiftUI
 
 struct PredatorCard: View {
     
-    var predator: ApexPredator
+    let predator: ApexPredator
     
     var body: some View {
+        
         ZStack {
             Rectangle()
                 .background {

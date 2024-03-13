@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PredatorController {
+class PredatorController: ObservableObject {
     
     var allApexPredators: [ApexPredator] = []
     var apexPredators: [ApexPredator] = []

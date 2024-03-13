@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		840946B82B8AF00C0097CE7E /* jpapexpredators.json in Resources */ = {isa = PBXBuildFile; fileRef = 840946B72B8AF00C0097CE7E /* jpapexpredators.json */; };
 		8421FBEA2B75612A009228BC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8421FBE92B75612A009228BC /* Launch Screen.storyboard */; };
+		842DBB102BA14CED00B42CA0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DBB0F2BA14CED00B42CA0 /* ViewModel.swift */; };
 		844436312B62E157001E4DEE /* PredatorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844436302B62E157001E4DEE /* PredatorDetail.swift */; };
 		8447D06A2B5DCA3900650BDD /* JP_Apex_PredatorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447D0692B5DCA3900650BDD /* JP_Apex_PredatorsApp.swift */; };
 		8447D06C2B5DCA3900650BDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447D06B2B5DCA3900650BDD /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		840946B72B8AF00C0097CE7E /* jpapexpredators.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jpapexpredators.json; sourceTree = "<group>"; };
 		8421FBE92B75612A009228BC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		842DBB0F2BA14CED00B42CA0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		844436302B62E157001E4DEE /* PredatorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorDetail.swift; sourceTree = "<group>"; };
 		8447D0662B5DCA3900650BDD /* JP Apex Predators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JP Apex Predators.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8447D0692B5DCA3900650BDD /* JP_Apex_PredatorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JP_Apex_PredatorsApp.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				8447D07A2B5E175B00650BDD /* ApexPredator.swift */,
+				842DBB0F2BA14CED00B42CA0 /* ViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,7 +231,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					8447D0652B5DCA3900650BDD = {
 						CreatedOnToolsVersion = 15.2;
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DBB102BA14CED00B42CA0 /* ViewModel.swift in Sources */,
 				84BAD8152B74840A00404057 /* PredatorCard.swift in Sources */,
 				8447D07D2B5E196100650BDD /* PredatorController.swift in Sources */,
 				84C51F5C2B64BCEB009A45E9 /* PredatorMap.swift in Sources */,
@@ -349,6 +353,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -410,6 +415,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -437,6 +443,7 @@
 				CODE_SIGN_ENTITLEMENTS = "JP Apex Predators/JP_Apex_Predators.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"JP Apex Predators/Preview Content\"";
 				DEVELOPMENT_TEAM = G3CQ4T9TU2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -479,6 +486,7 @@
 				CODE_SIGN_ENTITLEMENTS = "JP Apex Predators/JP_Apex_Predators.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"JP Apex Predators/Preview Content\"";
 				DEVELOPMENT_TEAM = G3CQ4T9TU2;
 				ENABLE_HARDENED_RUNTIME = YES;
