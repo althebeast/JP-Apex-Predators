@@ -31,7 +31,9 @@ struct ContentView: View {
                     ForEach(filteredDinos) { predator in
                             VStack {
                                 NavigationLink(destination: PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 2000)))) {
-                                    PredatorCard(predator: predator)
+                                    withAnimation {
+                                        PredatorCard(predator: predator)
+                                    }
                                 }
                             }
                             .frame(width: geo.size.width)
@@ -39,7 +41,6 @@ struct ContentView: View {
                     .navigationTitle("Jurassic Journey")
                     .searchable(text: $searchText)
                     .autocorrectionDisabled()
-                    .animation(.default, value: searchText)
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading) {
                             Button(action: {
