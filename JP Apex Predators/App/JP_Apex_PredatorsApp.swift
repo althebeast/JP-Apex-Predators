@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct JP_Apex_PredatorsApp: App {
+    
+    @State var viewModel = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(viewModel)
         }
     }
 }

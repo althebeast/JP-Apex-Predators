@@ -37,10 +37,12 @@ struct PredatorDetail: View {
                     
                     //Dino Image
                     NavigationLink{
-                        Image(predator.image)
-                            .resizable()
-                            .scaledToFit()
+                        withAnimation {
+                            Image(predator.image)
+                                .resizable()
+                                .scaledToFit()
                             .scaleEffect(x: -1)
+                        }
                     } label: {
                         if geo.size.height > geo.size.width {
                             Image(predator.image)

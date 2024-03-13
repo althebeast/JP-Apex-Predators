@@ -10,53 +10,45 @@ import MapKit
 
 struct ContentView: View {
     
-    let predators = PredatorController()
-    
-    @State var searchText = ""
-    @State var alphabetical = false
-    @State var currentTypeSelection = PredatorType.all
-    
-    var filteredDinos: [ApexPredator] {
-        predators.filter(by: currentTypeSelection)
-        
-        predators.sort(by: alphabetical)
-        
-        return predators.search(for: searchText)
-    }
+    @Environment(ViewModel.self) var viewModel
     
     var body: some View {
+        
+        @Bindable var vm = viewModel
+        
         NavigationStack {
             GeometryReader { geo in
                 ScrollView(showsIndicators: false) {
-                    ForEach(filteredDinos) { predator in
+                    ForEach(viewModel.filteredDinos) { predator in
                             VStack {
                                 NavigationLink(destination: PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 2000)))) {
-                                    PredatorCard(predator: predator)
+                                    withAnimation {
+                                        PredatorCard(predator: predator)
+                                    }
                                 }
                             }
                             .frame(width: geo.size.width)
                         }
                     .navigationTitle("Jurassic Journey")
-                    .searchable(text: $searchText)
+                    .searchable(text: $vm.searchText)
                     .autocorrectionDisabled()
-                    .animation(.default, value: searchText)
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading) {
                             Button(action: {
                                 withAnimation {
-                                    alphabetical.toggle()
+                                    viewModel.alphabetical.toggle()
                                 }
                             },
                                    label: {
-                                Image(systemName: alphabetical ? "film" : "textformat")
-                                    .symbolEffect(.bounce, value: alphabetical)
+                                Image(systemName: viewModel.alphabetical ? "film" : "textformat")
+                                    .symbolEffect(.bounce, value: viewModel.alphabetical)
                                 // ? anlamı = alphabetical doğru ise... film kullan : anlamı doğru değil ise... textformat kullan. Ve bu şekilde yazılınca adı Ternary if statement oluyor.
                             })
                         }
                         
                         ToolbarItem(placement: .topBarTrailing) {
                             Menu {
-                                Picker("Filter", selection: $currentTypeSelection.animation()) {
+                                Picker("Filter", selection: $vm.currentTypeSelection.animation()) {
                                     ForEach(PredatorType.allCases) { type in
                                         Label(type.rawValue.capitalized, systemImage: type.icon)
                                     }
