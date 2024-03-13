@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PredatorCard: View {
     
+    @Environment (BookmarkViewModel.self) var bookmarkVm
+    
     let predator: ApexPredator
     
     var body: some View {
@@ -42,6 +44,15 @@ struct PredatorCard: View {
                     .fontWeight(.bold)
                     
                     Spacer()
+                    
+                    Button(action: {
+                        withAnimation {
+                            toggleBookmark(for: predator)
+                        }
+                    }, label: {
+                        Image(systemName: bookmarkVm.isBookmarked(for: predator) ? "star.fill" : "star")
+                            .font(.title2)
+                    })
                 }
                 
                 Spacer()
@@ -56,6 +67,13 @@ struct PredatorCard: View {
             .padding()
         }
         .frame(height: 400)
+    }
+    private func toggleBookmark(for predator: ApexPredator) {
+        if bookmarkVm.isBookmarked(for: predator) {
+            bookmarkVm.removeBookmark(for: predator)
+        } else {
+            bookmarkVm.addBookmark(for: predator)
+        }
     }
 }
 

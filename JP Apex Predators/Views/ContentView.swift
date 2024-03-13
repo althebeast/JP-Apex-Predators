@@ -14,6 +14,8 @@ struct ContentView: View {
     
     var body: some View {
         
+        
+        
         @Bindable var vm = viewModel
         
         NavigationStack {

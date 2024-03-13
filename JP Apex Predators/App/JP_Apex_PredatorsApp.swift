@@ -11,11 +11,13 @@ import SwiftUI
 struct JP_Apex_PredatorsApp: App {
     
     @State var viewModel = ViewModel()
+    @State var bookmarkvm = BookmarkViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PredatorTabView()
                 .environment(viewModel)
+                .environment(bookmarkvm)
         }
     }
 }
