@@ -10,14 +10,21 @@ import SwiftUI
 struct BookmarkCard: View {
     
     @Environment (BookmarkViewModel.self) var bookmarkVm
-    @Environment (ViewModel.self) var vm
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 PredatorCardView(predator: bookmarkVm.bookmarks)
-                    .navigationTitle("Saved Articles")
+                    .navigationTitle("Favorite Dinos")
             }
+            .overlay(overlayView(isEmpty: bookmarkVm.bookmarks.isEmpty))
+        }
+    }
+    
+    @ViewBuilder
+    func overlayView(isEmpty: Bool) -> some View {
+        if isEmpty {
+            EmptyPlaceHolderView(text: "There's no favorite dinos", image: Image(systemName: "star"))
         }
     }
 }

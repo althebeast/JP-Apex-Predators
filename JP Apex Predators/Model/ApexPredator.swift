@@ -11,7 +11,7 @@ import MapKit
 import TipKit
 import Subsonic
 
-struct ApexPredator: Decodable, Identifiable {
+struct ApexPredator: Codable, Identifiable, Equatable {
     
     let id: Int
     let name: String
@@ -33,7 +33,7 @@ struct ApexPredator: Decodable, Identifiable {
     }
     
     
-    struct MovieScene: Decodable, Identifiable, Hashable {
+    struct MovieScene: Codable, Identifiable, Hashable {
         
         let id: Int
         let movie: String
@@ -42,7 +42,7 @@ struct ApexPredator: Decodable, Identifiable {
     }
 }
 
-enum PredatorType: String, Decodable, CaseIterable, Identifiable {
+enum PredatorType: String, Codable, CaseIterable, Identifiable {
     case all
     case land
     case air
@@ -80,7 +80,7 @@ enum PredatorType: String, Decodable, CaseIterable, Identifiable {
 }
 
 
-enum PredatorSound: String, Decodable {
+enum PredatorSound: String, Codable {
     case velociraptor
     case brachiosaurus
     case tyrannosaurusrex

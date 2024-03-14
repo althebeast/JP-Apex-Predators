@@ -11,6 +11,18 @@ import SwiftUI
 class BookmarkViewModel: ObservableObject {
     
     private(set) var bookmarks: [ApexPredator] = []
+    private let bookmarkStore = PlistDataStore<[ApexPredator]>(filename: "bookmarks")
+    
+    static let shared = BookmarkViewModel()
+    init() {
+        Task {
+            await load()
+        }
+    }
+    
+    private func load() async {
+        bookmarks = await bookmarkStore.load() ?? []
+    }
     
     func isBookmarked(for apex: ApexPredator) -> Bool {
         bookmarks.first { apex.id == $0.id } != nil
@@ -22,6 +34,7 @@ class BookmarkViewModel: ObservableObject {
         }
         
         bookmarks.insert(apex, at: 0)
+        bookmarkUpdated()
     }
     
     func removeBookmark(for apex: ApexPredator) {
@@ -29,5 +42,13 @@ class BookmarkViewModel: ObservableObject {
             return
         }
         bookmarks.remove(at: index)
+        bookmarkUpdated()
+    }
+    
+    private func bookmarkUpdated() {
+        let bookmarks = self.bookmarks
+        Task {
+            await bookmarkStore.save(bookmarks)
+        }
     }
 }

@@ -12,12 +12,12 @@ struct PredatorTabView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    Label("News", systemImage: "newspaper")
+                    Label("Home", systemImage: "house")
                 }
             
             BookmarkCard()
                 .tabItem {
-                    Label("Saved", systemImage: "bookmark")
+                    Label("Favorites", systemImage: "star")
                 }
         }
     }
