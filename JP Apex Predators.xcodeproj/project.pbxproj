@@ -22,7 +22,6 @@
 		84B2B5782BAE3F2900E71251 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5772BAE3F2900E71251 /* MovieModel.swift */; };
 		84B2B57A2BAE417200E71251 /* MovieAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5792BAE417200E71251 /* MovieAPIManager.swift */; };
 		84B2B57C2BAE441B00E71251 /* MovieFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B57B2BAE441B00E71251 /* MovieFinder.swift */; };
-		84B91D722B74919B007508CE /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 84B91D712B74919B007508CE /* Subsonic */; };
 		84B91D752B7497C0007508CE /* tyrannosaurusrex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D732B7497C0007508CE /* tyrannosaurusrex.mp3 */; };
 		84B91D762B7497C0007508CE /* velociraptor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D742B7497C0007508CE /* velociraptor.mp3 */; };
 		84B91D842B74A5E2007508CE /* dimorphodon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D782B74A5DE007508CE /* dimorphodon.mp3 */; };
@@ -38,7 +37,8 @@
 		84B91D8E2B74A5E2007508CE /* brachiosaurus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D822B74A5E1007508CE /* brachiosaurus.mp3 */; };
 		84B91D8F2B74A5E2007508CE /* dilophosaurus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D832B74A5E2007508CE /* dilophosaurus.mp3 */; };
 		84BA9E842BAE6DA200280414 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA9E832BAE6DA200280414 /* MovieViewModel.swift */; };
-		84BA9E872BAE82BC00280414 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84BA9E862BAE82BC00280414 /* CachedAsyncImage */; };
+		84BA9E8D2BAE959700280414 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84BA9E8C2BAE959700280414 /* CachedAsyncImage */; };
+		84BA9E8F2BAE95AF00280414 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 84BA9E8E2BAE95AF00280414 /* Subsonic */; };
 		84BAD8152B74840A00404057 /* PredatorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAD8142B74840A00404057 /* PredatorCard.swift */; };
 		84C14FE12BA296400089C9F7 /* EmptyPlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C14FE02BA296400089C9F7 /* EmptyPlaceHolderView.swift */; };
 		84C14FE32BA29D070089C9F7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C14FE22BA29D070089C9F7 /* DataStore.swift */; };
@@ -100,8 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B91D722B74919B007508CE /* Subsonic in Frameworks */,
-				84BA9E872BAE82BC00280414 /* CachedAsyncImage in Frameworks */,
+				84BA9E8F2BAE95AF00280414 /* Subsonic in Frameworks */,
+				84BA9E8D2BAE959700280414 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +237,8 @@
 			);
 			name = "JP Apex Predators";
 			packageProductDependencies = (
-				84B91D712B74919B007508CE /* Subsonic */,
-				84BA9E862BAE82BC00280414 /* CachedAsyncImage */,
+				84BA9E8C2BAE959700280414 /* CachedAsyncImage */,
+				84BA9E8E2BAE95AF00280414 /* Subsonic */,
 			);
 			productName = "JP Apex Predators";
 			productReference = 8447D0662B5DCA3900650BDD /* JP Apex Predators.app */;
@@ -664,15 +664,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84B91D712B74919B007508CE /* Subsonic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 84B91D702B74919B007508CE /* XCRemoteSwiftPackageReference "Subsonic" */;
-			productName = Subsonic;
-		};
-		84BA9E862BAE82BC00280414 /* CachedAsyncImage */ = {
+		84BA9E8C2BAE959700280414 /* CachedAsyncImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84BA9E852BAE82BC00280414 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		84BA9E8E2BAE95AF00280414 /* Subsonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84B91D702B74919B007508CE /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
