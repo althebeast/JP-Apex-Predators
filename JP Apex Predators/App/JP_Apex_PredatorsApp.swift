@@ -12,12 +12,14 @@ struct JP_Apex_PredatorsApp: App {
     
     @State var viewModel = ViewModel()
     @State var bookmarkvm = BookmarkViewModel()
+    @State var movievm = MovieViewModel()
     
     var body: some Scene {
         WindowGroup {
             PredatorTabView()
                 .environment(viewModel)
                 .environment(bookmarkvm)
+                .environment(movievm)
         }
     }
 }

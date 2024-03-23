@@ -17,8 +17,7 @@ struct EmptyPlaceHolderView: View {
             Spacer()
             
             Image(systemName: "star")
-                    .imageScale(.large)
-                    .font(.system(size: 52))
+                    .font(.system(size: 120))
             
             
             Text(text)
@@ -32,5 +31,5 @@ struct EmptyPlaceHolderView: View {
 }
 
 #Preview {
-    EmptyPlaceHolderView(text: "hello", image: Image(systemName: "star"))
+    EmptyPlaceHolderView(text: "There's no favorite dinos", image: Image(systemName: "star"))
 }
