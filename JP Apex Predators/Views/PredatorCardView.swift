@@ -29,4 +29,5 @@ struct PredatorCardView: View {
 
 #Preview {
     PredatorCardView(predator: [ApexPredator]())
+        .environmentObject(ViewModel())
 }

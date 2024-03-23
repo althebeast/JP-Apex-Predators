@@ -24,11 +24,14 @@ struct BookmarkCard: View {
     @ViewBuilder
     func overlayView(isEmpty: Bool) -> some View {
         if isEmpty {
-            EmptyPlaceHolderView(text: "There's no favorite dinos", image: Image(systemName: "star"))
+            VStack {
+                EmptyPlaceHolderView(text: "There's nothing 😔", image: Image(systemName: "star"))
+            }
         }
     }
 }
 
 #Preview {
     BookmarkCard()
+        .environmentObject(BookmarkViewModel())
 }

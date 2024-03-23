@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @Observable
-class ViewModel {
+class ViewModel: ObservableObject {
     
     let predators = PredatorController()
     

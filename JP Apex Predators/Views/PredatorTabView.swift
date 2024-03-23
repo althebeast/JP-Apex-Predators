@@ -15,6 +15,11 @@ struct PredatorTabView: View {
                     Label("Home", systemImage: "house")
                 }
             
+            MoviesCard()
+                .tabItem {
+                    Label("Movies", systemImage: "tv")
+                }
+            
             BookmarkCard()
                 .tabItem {
                     Label("Favorites", systemImage: "star")
