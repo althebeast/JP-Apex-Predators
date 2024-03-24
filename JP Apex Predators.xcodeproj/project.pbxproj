@@ -21,7 +21,6 @@
 		84B2B5762BAE3EC000E71251 /* MoviesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5752BAE3EC000E71251 /* MoviesCard.swift */; };
 		84B2B5782BAE3F2900E71251 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5772BAE3F2900E71251 /* MovieModel.swift */; };
 		84B2B57A2BAE417200E71251 /* MovieAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5792BAE417200E71251 /* MovieAPIManager.swift */; };
-		84B2B57C2BAE441B00E71251 /* MovieFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B57B2BAE441B00E71251 /* MovieFinder.swift */; };
 		84B91D752B7497C0007508CE /* tyrannosaurusrex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D732B7497C0007508CE /* tyrannosaurusrex.mp3 */; };
 		84B91D762B7497C0007508CE /* velociraptor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D742B7497C0007508CE /* velociraptor.mp3 */; };
 		84B91D842B74A5E2007508CE /* dimorphodon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D782B74A5DE007508CE /* dimorphodon.mp3 */; };
@@ -67,7 +66,6 @@
 		84B2B5752BAE3EC000E71251 /* MoviesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCard.swift; sourceTree = "<group>"; };
 		84B2B5772BAE3F2900E71251 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		84B2B5792BAE417200E71251 /* MovieAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIManager.swift; sourceTree = "<group>"; };
-		84B2B57B2BAE441B00E71251 /* MovieFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFinder.swift; sourceTree = "<group>"; };
 		84B91D732B7497C0007508CE /* tyrannosaurusrex.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tyrannosaurusrex.mp3; sourceTree = "<group>"; };
 		84B91D742B7497C0007508CE /* velociraptor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = velociraptor.mp3; sourceTree = "<group>"; };
 		84B91D782B74A5DE007508CE /* dimorphodon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dimorphodon.mp3; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				84BA9E832BAE6DA200280414 /* MovieViewModel.swift */,
 				84C14FE22BA29D070089C9F7 /* DataStore.swift */,
 				84B2B5772BAE3F2900E71251 /* MovieModel.swift */,
-				84B2B57B2BAE441B00E71251 /* MovieFinder.swift */,
 				84B2B5792BAE417200E71251 /* MovieAPIManager.swift */,
 			);
 			path = Model;
@@ -347,7 +344,6 @@
 				84BAD8152B74840A00404057 /* PredatorCard.swift in Sources */,
 				84BA9E842BAE6DA200280414 /* MovieViewModel.swift in Sources */,
 				8447D07D2B5E196100650BDD /* PredatorController.swift in Sources */,
-				84B2B57C2BAE441B00E71251 /* MovieFinder.swift in Sources */,
 				84CE1D372BA1858900B1128F /* PredatorTabView.swift in Sources */,
 				84C51F5C2B64BCEB009A45E9 /* PredatorMap.swift in Sources */,
 				84C51F6E2B64CC6E009A45E9 /* DetailTip.swift in Sources */,

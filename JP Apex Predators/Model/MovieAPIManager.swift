@@ -13,7 +13,7 @@ struct MovieAPIManager {
     
     func getData (_ completion:@escaping ([Part]) -> ()) {
         
-        let urlString = "https://api.themoviedb.org/3/collection/328-jurassic-park-collection?api_key=4b0e5a6d89f8dcc084a926adc60a7725"
+        let urlString = "https://api.themoviedb.org/3/collection/328-jurassic-park-collection?api_key=\(apiKey)"
         
         guard let url = URL(string: urlString) else {
             print("MovieAPI: Invalid URL")

@@ -166,7 +166,7 @@ struct PredatorDetail: View {
                             .foregroundStyle(.blue)
                     }
                     .padding()
-                    .padding(.bottom)
+                    .padding(.bottom, 100)
                     .frame(width: geo.size.width, alignment: .leading)
                 }
                 .ignoresSafeArea()
