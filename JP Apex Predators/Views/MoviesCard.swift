@@ -15,10 +15,8 @@ struct MoviesCard: View {
     var newDate:DateFormatter {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         return dateFormatter
     }
