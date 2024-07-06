@@ -12,6 +12,17 @@ struct MoviesCard: View {
     
     @Environment (MovieViewModel.self) var movievm
     
+    var newDate:DateFormatter {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        return dateFormatter
+    }
+    
     var body: some View {
         
         @Bindable var vm = MovieViewModel()
@@ -66,8 +77,8 @@ struct MoviesCard: View {
                                 .fontWeight(.semibold)
                             
                             Spacer()
-                            
-                            Text("Release Date: \(part.releaseDate)")
+
+                            Text("Release Date: \(newDate.date(from: part.releaseDate) ?? Date.now)")
                                 .font(.callout)
                                 .fontWeight(.semibold)
                         }
