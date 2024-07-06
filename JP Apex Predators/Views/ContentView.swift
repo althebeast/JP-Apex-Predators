@@ -61,6 +61,7 @@ struct ContentView: View {
                 }
             }
         }
+        .navigationSplitViewStyle(.automatic)
         .preferredColorScheme(.dark)
     }
 }

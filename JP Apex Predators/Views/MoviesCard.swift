@@ -90,6 +90,7 @@ struct MoviesCard: View {
             }
             .navigationTitle("Jurassic Park Movies")
         }
+        .navigationViewStyle(.stack)
     }
 }
 

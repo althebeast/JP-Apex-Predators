@@ -56,7 +56,7 @@ struct PredatorDetail: View {
                             Image(predator.image)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: geo.size.width/1, height: geo.size.height/0.7)
+                                .frame(width: geo.size.width/1.8, height: geo.size.height/1)
                                 .scaleEffect(x: -1)
                                 .shadow(color: .black, radius: 7)
                                 .offset(y: 20)
