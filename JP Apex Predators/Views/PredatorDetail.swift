@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 import TipKit
 import Subsonic
+import StoreKit
 
 struct PredatorDetail: View {
     
@@ -16,6 +17,8 @@ struct PredatorDetail: View {
     let imageTip = DetailTip()
     
     @State var position: MapCameraPosition
+    
+    @Environment(\.requestReview) var requestReview
     
     var body: some View {
         
@@ -168,6 +171,9 @@ struct PredatorDetail: View {
                     .padding()
                     .padding(.bottom, 100)
                     .frame(width: geo.size.width, alignment: .leading)
+                    .onAppear {
+//                        requestReview()
+                    }
                 }
                 .ignoresSafeArea()
             }

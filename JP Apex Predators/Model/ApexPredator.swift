@@ -34,7 +34,7 @@ struct ApexPredator: Codable, Identifiable, Equatable {
     
     
     struct MovieScene: Codable, Identifiable, Hashable {
-        
+         
         let id: Int
         let movie: String
         let sceneDescription: String
