@@ -92,7 +92,8 @@ struct PredatorDetail: View {
                     }
                     
                         BannerAd(unitID: "ca-app-pub-3940256099942544/2435281174")
-                        .frame(height: 60)
+                        .frame(maxWidth: .infinity, minHeight: 70)
+                        .padding()
                     
                     //Current location
                     NavigationLink {
@@ -170,9 +171,14 @@ struct PredatorDetail: View {
                         Link(predator.link, destination: URL(string: predator.link)!)
                             .font(.caption)
                             .foregroundStyle(.blue)
+                    
+                    BannerAd(unitID: "ca-app-pub-3940256099942544/2435281174")
+                    .frame(maxWidth: .infinity, minHeight: 70)
+                    .padding(.top)
+                    
                     }
                     .padding()
-                    .padding(.bottom, 100)
+                    .padding(.bottom, 50)
                     .frame(width: geo.size.width, alignment: .leading)
                     .onAppear {
 //                        requestReview()

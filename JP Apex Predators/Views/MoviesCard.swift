@@ -93,6 +93,10 @@ struct MoviesCard: View {
                 .refreshable {
                     movievm.fetcData()
                 }
+                
+                BannerAd(unitID: "ca-app-pub-3940256099942544/2435281174")
+                .frame(maxWidth: .infinity, maxHeight: 60)
+                .padding()
             }
             .onAppear {
                 movievm.fetcData()
