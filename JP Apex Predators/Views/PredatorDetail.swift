@@ -178,7 +178,7 @@ struct PredatorDetail: View {
                     
                     }
                     .padding()
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 135)
                     .frame(width: geo.size.width, alignment: .leading)
                     .onAppear {
 //                        requestReview()
