@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 @main
 struct JP_Apex_PredatorsApp: App {
+    init(){
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+    }
     
     @AppStorage("isLightMode") private var isLightMode = false
     @StateObject var viewModel = ViewModel()

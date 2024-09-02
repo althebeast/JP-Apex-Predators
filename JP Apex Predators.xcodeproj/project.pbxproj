@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CE85BF6AD1121B9B183AF1F /* Pods_ApexStickers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DA3BF243745C374F5F2D3F /* Pods_ApexStickers.framework */; };
 		840946B82B8AF00C0097CE7E /* jpapexpredators.json in Resources */ = {isa = PBXBuildFile; fileRef = 840946B72B8AF00C0097CE7E /* jpapexpredators.json */; };
 		8421FBEA2B75612A009228BC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8421FBE92B75612A009228BC /* Launch Screen.storyboard */; };
 		842DBB102BA14CED00B42CA0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DBB0F2BA14CED00B42CA0 /* ViewModel.swift */; };
@@ -18,6 +19,8 @@
 		8447D07B2B5E175B00650BDD /* ApexPredator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447D07A2B5E175B00650BDD /* ApexPredator.swift */; };
 		8447D07D2B5E196100650BDD /* PredatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447D07C2B5E196100650BDD /* PredatorController.swift */; };
 		8447D07F2B5E264400650BDD /* PredatorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447D07E2B5E264400650BDD /* PredatorRow.swift */; };
+		847AAD3B2C85E03500706A60 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 847AAD3A2C85E03500706A60 /* GoogleMobileAds */; };
+		847AAD3D2C85E08A00706A60 /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AAD3C2C85E08A00706A60 /* BannerAd.swift */; };
 		84B2B5762BAE3EC000E71251 /* MoviesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5752BAE3EC000E71251 /* MoviesCard.swift */; };
 		84B2B5782BAE3F2900E71251 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5772BAE3F2900E71251 /* MovieModel.swift */; };
 		84B2B57A2BAE417200E71251 /* MovieAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5792BAE417200E71251 /* MovieAPIManager.swift */; };
@@ -48,9 +51,15 @@
 		84CE1D332BA17FFA00B1128F /* BookmarkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE1D322BA17FFA00B1128F /* BookmarkCard.swift */; };
 		84CE1D352BA1838A00B1128F /* PredatorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE1D342BA1838A00B1128F /* PredatorCardView.swift */; };
 		84CE1D372BA1858900B1128F /* PredatorTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE1D362BA1858900B1128F /* PredatorTabView.swift */; };
+		B095702BDB0E955A8CD9DEBB /* Pods_JP_Apex_Predators.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF3288D516415DFDC561A0 /* Pods_JP_Apex_Predators.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08C2C30D2FD404DD2AAA139C /* Pods-JP Apex Predators.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JP Apex Predators.debug.xcconfig"; path = "Target Support Files/Pods-JP Apex Predators/Pods-JP Apex Predators.debug.xcconfig"; sourceTree = "<group>"; };
+		22CF3288D516415DFDC561A0 /* Pods_JP_Apex_Predators.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JP_Apex_Predators.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DA3BF243745C374F5F2D3F /* Pods_ApexStickers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApexStickers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74731D86484EA38CE7B107D1 /* Pods-ApexStickers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApexStickers.release.xcconfig"; path = "Target Support Files/Pods-ApexStickers/Pods-ApexStickers.release.xcconfig"; sourceTree = "<group>"; };
+		7C4B2502B3C34C1FEBBB054C /* Pods-ApexStickers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApexStickers.debug.xcconfig"; path = "Target Support Files/Pods-ApexStickers/Pods-ApexStickers.debug.xcconfig"; sourceTree = "<group>"; };
 		840946B72B8AF00C0097CE7E /* jpapexpredators.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jpapexpredators.json; sourceTree = "<group>"; };
 		8421FBE92B75612A009228BC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		842DBB0F2BA14CED00B42CA0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -64,6 +73,8 @@
 		8447D07A2B5E175B00650BDD /* ApexPredator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexPredator.swift; sourceTree = "<group>"; };
 		8447D07C2B5E196100650BDD /* PredatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorController.swift; sourceTree = "<group>"; };
 		8447D07E2B5E264400650BDD /* PredatorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorRow.swift; sourceTree = "<group>"; };
+		847AAD382C85DEF100706A60 /* JP-Apex-Predators-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JP-Apex-Predators-Info.plist"; sourceTree = SOURCE_ROOT; };
+		847AAD3C2C85E08A00706A60 /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		84B2B5752BAE3EC000E71251 /* MoviesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCard.swift; sourceTree = "<group>"; };
 		84B2B5772BAE3F2900E71251 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		84B2B5792BAE417200E71251 /* MovieAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIManager.swift; sourceTree = "<group>"; };
@@ -93,26 +104,50 @@
 		84CE1D322BA17FFA00B1128F /* BookmarkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCard.swift; sourceTree = "<group>"; };
 		84CE1D342BA1838A00B1128F /* PredatorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorCardView.swift; sourceTree = "<group>"; };
 		84CE1D362BA1858900B1128F /* PredatorTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorTabView.swift; sourceTree = "<group>"; };
+		FCFDB765AAAA8DA4140B867F /* Pods-JP Apex Predators.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JP Apex Predators.release.xcconfig"; path = "Target Support Files/Pods-JP Apex Predators/Pods-JP Apex Predators.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5DBE2EBA813F31E566F9EFEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE85BF6AD1121B9B183AF1F /* Pods_ApexStickers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8447D0632B5DCA3900650BDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847AAD3B2C85E03500706A60 /* GoogleMobileAds in Frameworks */,
 				84BA9E8F2BAE95AF00280414 /* Subsonic in Frameworks */,
 				84BA9E8D2BAE959700280414 /* CachedAsyncImage in Frameworks */,
+				B095702BDB0E955A8CD9DEBB /* Pods_JP_Apex_Predators.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80C3D87B63F848467917D661 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C4B2502B3C34C1FEBBB054C /* Pods-ApexStickers.debug.xcconfig */,
+				74731D86484EA38CE7B107D1 /* Pods-ApexStickers.release.xcconfig */,
+				08C2C30D2FD404DD2AAA139C /* Pods-JP Apex Predators.debug.xcconfig */,
+				FCFDB765AAAA8DA4140B867F /* Pods-JP Apex Predators.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8447D05D2B5DCA3800650BDD = {
 			isa = PBXGroup;
 			children = (
 				8447D0682B5DCA3900650BDD /* JP Apex Predators */,
 				8447D0672B5DCA3900650BDD /* Products */,
+				80C3D87B63F848467917D661 /* Pods */,
+				A764B8465F2723FD5E3A7D99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +163,7 @@
 		8447D0682B5DCA3900650BDD /* JP Apex Predators */ = {
 			isa = PBXGroup;
 			children = (
+				847AAD382C85DEF100706A60 /* JP-Apex-Predators-Info.plist */,
 				84B91D912B74A6CA007508CE /* App */,
 				84B91D922B74A6D8007508CE /* Controller */,
 				84B91D932B74A6E6007508CE /* Model */,
@@ -186,6 +222,7 @@
 				84C14FE02BA296400089C9F7 /* EmptyPlaceHolderView.swift */,
 				84B2B5752BAE3EC000E71251 /* MoviesCard.swift */,
 				84B9FC9D2C84F10700868B7B /* OptionScreen.swift */,
+				847AAD3C2C85E08A00706A60 /* BannerAd.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +257,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A764B8465F2723FD5E3A7D99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32DA3BF243745C374F5F2D3F /* Pods_ApexStickers.framework */,
+				22CF3288D516415DFDC561A0 /* Pods_JP_Apex_Predators.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8447D0752B5DCA3E00650BDD /* Build configuration list for PBXNativeTarget "JP Apex Predators" */;
 			buildPhases = (
+				AC587CA15CCA81258DC6BE71 /* [CP] Check Pods Manifest.lock */,
 				8447D0622B5DCA3900650BDD /* Sources */,
 				8447D0632B5DCA3900650BDD /* Frameworks */,
 				8447D0642B5DCA3900650BDD /* Resources */,
@@ -239,6 +286,7 @@
 			packageProductDependencies = (
 				84BA9E8C2BAE959700280414 /* CachedAsyncImage */,
 				84BA9E8E2BAE95AF00280414 /* Subsonic */,
+				847AAD3A2C85E03500706A60 /* GoogleMobileAds */,
 			);
 			productName = "JP Apex Predators";
 			productReference = 8447D0662B5DCA3900650BDD /* JP Apex Predators.app */;
@@ -248,7 +296,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C51F672B64C51E009A45E9 /* Build configuration list for PBXNativeTarget "ApexStickers" */;
 			buildPhases = (
+				D12543B9502FE35DF44866B0 /* [CP] Check Pods Manifest.lock */,
 				84C51F5D2B64C517009A45E9 /* Resources */,
+				5DBE2EBA813F31E566F9EFEC /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,6 +339,7 @@
 			packageReferences = (
 				84B91D702B74919B007508CE /* XCRemoteSwiftPackageReference "Subsonic" */,
 				84BA9E852BAE82BC00280414 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				847AAD392C85E03500706A60 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 8447D0672B5DCA3900650BDD /* Products */;
 			projectDirPath = "";
@@ -335,6 +386,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AC587CA15CCA81258DC6BE71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JP Apex Predators-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D12543B9502FE35DF44866B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApexStickers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8447D0622B5DCA3900650BDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -346,6 +444,7 @@
 				84CE1D332BA17FFA00B1128F /* BookmarkCard.swift in Sources */,
 				84BAD8152B74840A00404057 /* PredatorCard.swift in Sources */,
 				84BA9E842BAE6DA200280414 /* MovieViewModel.swift in Sources */,
+				847AAD3D2C85E08A00706A60 /* BannerAd.swift in Sources */,
 				8447D07D2B5E196100650BDD /* PredatorController.swift in Sources */,
 				84CE1D372BA1858900B1128F /* PredatorTabView.swift in Sources */,
 				84C51F5C2B64BCEB009A45E9 /* PredatorMap.swift in Sources */,
@@ -487,6 +586,7 @@
 		};
 		8447D0762B5DCA3E00650BDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08C2C30D2FD404DD2AAA139C /* Pods-JP Apex Predators.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,6 +599,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JP-Apex-Predators-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Jurassic Journey";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -530,6 +631,7 @@
 		};
 		8447D0772B5DCA3E00650BDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCFDB765AAAA8DA4140B867F /* Pods-JP Apex Predators.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -542,6 +644,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JP-Apex-Predators-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Jurassic Journey";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -573,6 +676,7 @@
 		};
 		84C51F682B64C51E009A45E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C4B2502B3C34C1FEBBB054C /* Pods-ApexStickers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
@@ -594,6 +698,7 @@
 		};
 		84C51F692B64C51E009A45E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74731D86484EA38CE7B107D1 /* Pods-ApexStickers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
@@ -647,6 +752,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		847AAD392C85E03500706A60 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.0;
+			};
+		};
 		84B91D702B74919B007508CE /* XCRemoteSwiftPackageReference "Subsonic" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/Subsonic";
@@ -666,6 +779,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		847AAD3A2C85E03500706A60 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847AAD392C85E03500706A60 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		84BA9E8C2BAE959700280414 /* CachedAsyncImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84BA9E852BAE82BC00280414 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;

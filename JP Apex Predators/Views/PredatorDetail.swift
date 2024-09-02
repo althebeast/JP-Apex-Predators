@@ -91,6 +91,9 @@ struct PredatorDetail: View {
                         }
                     }
                     
+                        BannerAd(unitID: "ca-app-pub-3940256099942544/2435281174")
+                        .frame(height: 60)
+                    
                     //Current location
                     NavigationLink {
                         PredatorMap(position: .camera(MapCamera(centerCoordinate: predator.location,
