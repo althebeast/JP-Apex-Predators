@@ -41,7 +41,7 @@ struct MoviesCard: View {
                             case .success(let image):
                                 image
                                     .resizable()
-                                    .scaledToFill()
+                                    .scaledToFit()
                                     .clipShape(RoundedRectangle(cornerRadius: 20))
                             case .failure:
                                 HStack {

@@ -35,6 +35,7 @@
 		84B91D8D2B74A5E2007508CE /* allosaurus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D812B74A5E1007508CE /* allosaurus.mp3 */; };
 		84B91D8E2B74A5E2007508CE /* brachiosaurus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D822B74A5E1007508CE /* brachiosaurus.mp3 */; };
 		84B91D8F2B74A5E2007508CE /* dilophosaurus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84B91D832B74A5E2007508CE /* dilophosaurus.mp3 */; };
+		84B9FC9E2C84F10800868B7B /* OptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9FC9D2C84F10700868B7B /* OptionScreen.swift */; };
 		84BA9E842BAE6DA200280414 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA9E832BAE6DA200280414 /* MovieViewModel.swift */; };
 		84BA9E8D2BAE959700280414 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 84BA9E8C2BAE959700280414 /* CachedAsyncImage */; };
 		84BA9E8F2BAE95AF00280414 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 84BA9E8E2BAE95AF00280414 /* Subsonic */; };
@@ -80,6 +81,7 @@
 		84B91D812B74A5E1007508CE /* allosaurus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = allosaurus.mp3; sourceTree = "<group>"; };
 		84B91D822B74A5E1007508CE /* brachiosaurus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = brachiosaurus.mp3; sourceTree = "<group>"; };
 		84B91D832B74A5E2007508CE /* dilophosaurus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dilophosaurus.mp3; sourceTree = "<group>"; };
+		84B9FC9D2C84F10700868B7B /* OptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScreen.swift; sourceTree = "<group>"; };
 		84BA9E832BAE6DA200280414 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		84BAD8142B74840A00404057 /* PredatorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorCard.swift; sourceTree = "<group>"; };
 		84C14FE02BA296400089C9F7 /* EmptyPlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceHolderView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				84CE1D322BA17FFA00B1128F /* BookmarkCard.swift */,
 				84C14FE02BA296400089C9F7 /* EmptyPlaceHolderView.swift */,
 				84B2B5752BAE3EC000E71251 /* MoviesCard.swift */,
+				84B9FC9D2C84F10700868B7B /* OptionScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				84C51F5C2B64BCEB009A45E9 /* PredatorMap.swift in Sources */,
 				84C51F6E2B64CC6E009A45E9 /* DetailTip.swift in Sources */,
 				8447D07B2B5E175B00650BDD /* ApexPredator.swift in Sources */,
+				84B9FC9E2C84F10800868B7B /* OptionScreen.swift in Sources */,
 				84C14FE12BA296400089C9F7 /* EmptyPlaceHolderView.swift in Sources */,
 				84B2B57A2BAE417200E71251 /* MovieAPIManager.swift in Sources */,
 				8447D06C2B5DCA3900650BDD /* ContentView.swift in Sources */,
@@ -416,6 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -472,6 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -486,7 +492,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JP Apex Predators/JP_Apex_Predators.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"JP Apex Predators/Preview Content\"";
 				DEVELOPMENT_TEAM = G3CQ4T9TU2;
@@ -510,7 +516,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperensarisan.JP-Apex-Predators";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -529,7 +535,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JP Apex Predators/JP_Apex_Predators.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"JP Apex Predators/Preview Content\"";
 				DEVELOPMENT_TEAM = G3CQ4T9TU2;
@@ -553,7 +559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperensarisan.JP-Apex-Predators";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

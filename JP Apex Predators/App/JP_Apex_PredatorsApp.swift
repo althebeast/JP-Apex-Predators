@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct JP_Apex_PredatorsApp: App {
     
+    @AppStorage("isLightMode") private var isLightMode = false
     @StateObject var viewModel = ViewModel()
     @StateObject var bookmarkvm = BookmarkViewModel()
     @StateObject var movievm = MovieViewModel()
@@ -20,6 +21,7 @@ struct JP_Apex_PredatorsApp: App {
                 .environmentObject(ViewModel())
                 .environmentObject(BookmarkViewModel())
                 .environmentObject(MovieViewModel())
+                .preferredColorScheme(isLightMode ? .light : .dark)
         }
     }
 }

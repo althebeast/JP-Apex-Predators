@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct PredatorTabView: View {
+    
+    @AppStorage("isLightMode") public var isLightMode = false
+    @State private var activeTab = 0
+    
     var body: some View {
-        TabView {
+        TabView(selection: $activeTab) {
             ContentView()
                 .tabItem {
                     Label("Home", systemImage: "house")
@@ -24,7 +28,13 @@ struct PredatorTabView: View {
                 .tabItem {
                     Label("Favorites", systemImage: "star")
                 }
+            
+            OptionScreen()
+                .tabItem { 
+                    Label("Settings", systemImage: "gear")
+                }
         }
+        .tint(activeTab == 0 && isLightMode ? .black : .accentColor)
     }
 }
 
