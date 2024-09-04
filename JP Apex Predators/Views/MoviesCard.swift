@@ -12,6 +12,8 @@ struct MoviesCard: View {
     
     @Environment (MovieViewModel.self) var movievm
     
+    @State var selectedImage: Part?
+    
     var newDate:DateFormatter {
         
         let dateFormatter = DateFormatter()
@@ -65,6 +67,9 @@ struct MoviesCard: View {
                                 }
                             }
                             .padding(.bottom, 10)
+                            .onTapGesture {
+                                selectedImage = part
+                            }
                             
                             HStack {
                                 Text(part.title)
@@ -111,6 +116,9 @@ struct MoviesCard: View {
             }
         }
         .navigationViewStyle(.stack)
+        .sheet(item: $selectedImage) { j in
+            MovieImageSheetView(imageToShow: j)
+        }
     }
 }
 
