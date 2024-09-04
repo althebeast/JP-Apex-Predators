@@ -15,8 +15,9 @@ struct MoviesCard: View {
     var newDate:DateFormatter {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeZone = .current
         
         return dateFormatter
     }
@@ -76,7 +77,7 @@ struct MoviesCard: View {
                             
                             Spacer()
 
-                            Text("Release Date: \(newDate.date(from: part.releaseDate) ?? Date.now)")
+                            Text("Release Date: \(newDate.string(from: part.releaseDate))")
                                 .font(.callout)
                                 .fontWeight(.semibold)
                         }

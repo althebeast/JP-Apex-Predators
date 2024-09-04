@@ -34,7 +34,7 @@ struct Part: Decodable, Identifiable {
     var title: String
     var overview: String
     var posterPath: String?
-    var releaseDate: String
+    var releaseDate: Date
     var voteAverage: Double
     
     enum CodingKeys: String, CodingKey {
@@ -57,5 +57,4 @@ struct Part: Decodable, Identifiable {
         
         return URL(string: fullImage)
     }
-    
 }

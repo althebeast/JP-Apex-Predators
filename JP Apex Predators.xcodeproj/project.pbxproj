@@ -64,6 +64,8 @@
 		8447D07A2B5E175B00650BDD /* ApexPredator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexPredator.swift; sourceTree = "<group>"; };
 		8447D07C2B5E196100650BDD /* PredatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorController.swift; sourceTree = "<group>"; };
 		8447D07E2B5E264400650BDD /* PredatorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorRow.swift; sourceTree = "<group>"; };
+		84A53B0D2C88C440002C862F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		84A53B0E2C88C50A002C862F /* JP-Apex-Predators-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JP-Apex-Predators-Info.plist"; sourceTree = SOURCE_ROOT; };
 		84B2B5752BAE3EC000E71251 /* MoviesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCard.swift; sourceTree = "<group>"; };
 		84B2B5772BAE3F2900E71251 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		84B2B5792BAE417200E71251 /* MovieAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIManager.swift; sourceTree = "<group>"; };
@@ -128,8 +130,10 @@
 		8447D0682B5DCA3900650BDD /* JP Apex Predators */ = {
 			isa = PBXGroup;
 			children = (
+				84A53B0E2C88C50A002C862F /* JP-Apex-Predators-Info.plist */,
 				84B91D912B74A6CA007508CE /* App */,
 				84B91D922B74A6D8007508CE /* Controller */,
+				84A53B0C2C889A91002C862F /* Data Service */,
 				84B91D932B74A6E6007508CE /* Model */,
 				84B91D902B74A6AF007508CE /* Views */,
 				84B91D772B749BC3007508CE /* Sounds */,
@@ -138,6 +142,7 @@
 				8447D06D2B5DCA3E00650BDD /* Assets.xcassets */,
 				8447D06F2B5DCA3E00650BDD /* JP_Apex_Predators.entitlements */,
 				8447D0702B5DCA3E00650BDD /* Preview Content */,
+				84A53B0D2C88C440002C862F /* Config.xcconfig */,
 			);
 			path = "JP Apex Predators";
 			sourceTree = "<group>";
@@ -148,6 +153,15 @@
 				8447D0712B5DCA3E00650BDD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84A53B0C2C889A91002C862F /* Data Service */ = {
+			isa = PBXGroup;
+			children = (
+				84C14FE22BA29D070089C9F7 /* DataStore.swift */,
+				84B2B5792BAE417200E71251 /* MovieAPIManager.swift */,
+			);
+			path = "Data Service";
 			sourceTree = "<group>";
 		};
 		84B91D772B749BC3007508CE /* Sounds */ = {
@@ -213,9 +227,7 @@
 				842DBB0F2BA14CED00B42CA0 /* ViewModel.swift */,
 				84CE1D302BA1797800B1128F /* BookmarkViewModel.swift */,
 				84BA9E832BAE6DA200280414 /* MovieViewModel.swift */,
-				84C14FE22BA29D070089C9F7 /* DataStore.swift */,
 				84B2B5772BAE3F2900E71251 /* MovieModel.swift */,
-				84B2B5792BAE417200E71251 /* MovieAPIManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -487,6 +499,7 @@
 		};
 		8447D0762B5DCA3E00650BDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A53B0D2C88C440002C862F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,6 +512,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JP-Apex-Predators-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Jurassic Journey";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -530,6 +544,7 @@
 		};
 		8447D0772B5DCA3E00650BDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A53B0D2C88C440002C862F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -542,6 +557,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JP-Apex-Predators-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Jurassic Journey";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
