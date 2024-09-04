@@ -26,79 +26,89 @@ struct MoviesCard: View {
         
         @Bindable var vm = MovieViewModel()
         
+        GeometryReader { geo in
         NavigationView {
-            VStack(spacing: 0) {
-                List(movievm.parts) { part in
-                    VStack {
-                        
-                        CachedAsyncImage(url: part.imageURL) { image in
-                            switch image {
-                            case .empty:
-                                HStack {
-                                    Spacer()
-                                    ProgressView()
-                                    Spacer()
+                VStack(spacing: 0) {
+                    List(movievm.parts) { part in
+                        VStack {
+                            
+                            CachedAsyncImage(url: part.imageURL) { image in
+                                switch image {
+                                case .empty:
+                                    HStack {
+                                        Spacer()
+                                        ProgressView()
+                                        Spacer()
+                                    }
+                                case .success(let image):
+                                    if geo.size.height > 1000 {
+                                        image
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: geo.size.height/1.5)
+                                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                                    } else {
+                                        image
+                                            .resizable()
+                                            .scaledToFit()
+                                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                                    }
+                                case .failure:
+                                    HStack {
+                                        Spacer()
+                                        Image(systemName: "photo")
+                                            .imageScale(.large)
+                                        Spacer()
+                                    }
+                                @unknown default:
+                                    fatalError()
                                 }
-                            case .success(let image):
-                                image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                            case .failure:
-                                HStack {
-                                    Spacer()
-                                    Image(systemName: "photo")
-                                        .imageScale(.large)
-                                    Spacer()
-                                }
-                            @unknown default:
-                                fatalError()
                             }
-                        }
-                        .padding(.bottom, 10)
-                        
-                        HStack {
-                            Text(part.title)
-                                .font(.title2)
-                                .bold()
                             .padding(.bottom, 10)
                             
-                            Spacer()
-                        }
-                        
-                        Text(part.overview)
-                            .padding(.bottom, 10)
-                            .font(.subheadline)
-                        
-                        HStack {
-                            Text("Rating: \(part.voteAverage, specifier: "%.1f")")
-                                .font(.callout)
-                                .fontWeight(.semibold)
+                            HStack {
+                                Text(part.title)
+                                    .font(.title2)
+                                    .bold()
+                                .padding(.bottom, 10)
+                                
+                                Spacer()
+                            }
                             
-                            Spacer()
+                            Text(part.overview)
+                                .padding(.bottom, 10)
+                                .font(.subheadline)
+                            
+                            HStack {
+                                Text("Rating: \(part.voteAverage, specifier: "%.1f")")
+                                    .font(.callout)
+                                    .fontWeight(.semibold)
+                                
+                                Spacer()
 
-                            Text("Release Date: \(newDate.string(from: part.releaseDate))")
-                                .font(.callout)
-                                .fontWeight(.semibold)
-                        }
-                        .padding(.bottom, 10)
-                        Divider()
+                                Text("Release Date: \(newDate.string(from: part.releaseDate))")
+                                    .font(.callout)
+                                    .fontWeight(.semibold)
+                            }
                             .padding(.bottom, 10)
+                            Divider()
+                                .padding(.bottom, 10)
+                        }
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.leading)
+                        .listRowSeparator(.hidden)
                     }
-                    .padding(.horizontal)
-                    .multilineTextAlignment(.leading)
-                    .listRowSeparator(.hidden)
+                    
+                    .listStyle(.plain)
+                    .refreshable {
+                        movievm.fetcData()
+                    }
                 }
-                
-                .listStyle(.plain)
-                .refreshable {
+                .onAppear {
                     movievm.fetcData()
                 }
-            }
-            .onAppear {
-                movievm.fetcData()
-            }
             .navigationTitle("Jurassic Park Movies")
+            }
         }
         .navigationViewStyle(.stack)
     }
