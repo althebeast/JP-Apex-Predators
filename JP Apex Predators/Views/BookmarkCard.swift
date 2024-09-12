@@ -13,11 +13,19 @@ struct BookmarkCard: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                PredatorCardView(predator: bookmarkVm.bookmarks)
-                    .navigationTitle("Favorite Dinos")
+                ZStack {
+                    if bookmarkVm.bookmarks.isEmpty {
+                        NoBookmarkView()
+                            .transition(AnyTransition.opacity.animation(.easeIn))
+                    } else {
+                        ScrollView {
+                        PredatorCardView(predator: bookmarkVm.bookmarks)
+                    }
+                        .scrollIndicators(.hidden)
+                }
+                    
             }
-            .overlay(overlayView(isEmpty: bookmarkVm.bookmarks.isEmpty))
+            .navigationTitle("Favorite Dinos")
         }
     }
     
@@ -34,4 +42,5 @@ struct BookmarkCard: View {
 #Preview {
     BookmarkCard()
         .environmentObject(BookmarkViewModel())
+        .preferredColorScheme(.dark)
 }

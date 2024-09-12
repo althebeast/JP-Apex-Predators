@@ -12,6 +12,9 @@ class BookmarkViewModel: ObservableObject {
     
     private(set) var bookmarks: [ApexPredator] = []
     private let bookmarkStore = PlistDataStore<[ApexPredator]>(filename: "bookmarks")
+    var animate = false
+    let firstColor = Color("FirstButtonColor")
+    let secondColor = Color("SecondButtonColor")
     
     static let shared = BookmarkViewModel()
     init() {

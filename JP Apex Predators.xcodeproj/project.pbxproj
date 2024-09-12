@@ -49,6 +49,8 @@
 		84CE1D332BA17FFA00B1128F /* BookmarkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE1D322BA17FFA00B1128F /* BookmarkCard.swift */; };
 		84CE1D352BA1838A00B1128F /* PredatorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE1D342BA1838A00B1128F /* PredatorCardView.swift */; };
 		84CE1D372BA1858900B1128F /* PredatorTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE1D362BA1858900B1128F /* PredatorTabView.swift */; };
+		84F2879F2C9350E800D912E6 /* NoMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2879E2C9350E800D912E6 /* NoMoviesView.swift */; };
+		84F287A12C93574F00D912E6 /* NoBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F287A02C93574F00D912E6 /* NoBookmarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		84CE1D322BA17FFA00B1128F /* BookmarkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCard.swift; sourceTree = "<group>"; };
 		84CE1D342BA1838A00B1128F /* PredatorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorCardView.swift; sourceTree = "<group>"; };
 		84CE1D362BA1858900B1128F /* PredatorTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorTabView.swift; sourceTree = "<group>"; };
+		84F2879E2C9350E800D912E6 /* NoMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMoviesView.swift; sourceTree = "<group>"; };
+		84F287A02C93574F00D912E6 /* NoBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBookmarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +203,10 @@
 				84BAD8142B74840A00404057 /* PredatorCard.swift */,
 				84CE1D342BA1838A00B1128F /* PredatorCardView.swift */,
 				84CE1D322BA17FFA00B1128F /* BookmarkCard.swift */,
+				84F287A02C93574F00D912E6 /* NoBookmarkView.swift */,
 				84C14FE02BA296400089C9F7 /* EmptyPlaceHolderView.swift */,
 				84B2B5752BAE3EC000E71251 /* MoviesCard.swift */,
+				84F2879E2C9350E800D912E6 /* NoMoviesView.swift */,
 				84A53B132C88E0C7002C862F /* MovieImageSheetView.swift */,
 				84B9FC9D2C84F10700868B7B /* OptionScreen.swift */,
 			);
@@ -375,6 +381,8 @@
 				84A53B142C88E0C7002C862F /* MovieImageSheetView.swift in Sources */,
 				84B2B5762BAE3EC000E71251 /* MoviesCard.swift in Sources */,
 				844436312B62E157001E4DEE /* PredatorDetail.swift in Sources */,
+				84F2879F2C9350E800D912E6 /* NoMoviesView.swift in Sources */,
+				84F287A12C93574F00D912E6 /* NoBookmarkView.swift in Sources */,
 				8447D06A2B5DCA3900650BDD /* JP_Apex_PredatorsApp.swift in Sources */,
 				8447D07F2B5E264400650BDD /* PredatorRow.swift in Sources */,
 			);
@@ -509,7 +517,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JP Apex Predators/JP_Apex_Predators.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"JP Apex Predators/Preview Content\"";
 				DEVELOPMENT_TEAM = G3CQ4T9TU2;
@@ -534,7 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperensarisan.JP-Apex-Predators";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -554,7 +562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JP Apex Predators/JP_Apex_Predators.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"JP Apex Predators/Preview Content\"";
 				DEVELOPMENT_TEAM = G3CQ4T9TU2;
@@ -579,7 +587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperensarisan.JP-Apex-Predators";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
