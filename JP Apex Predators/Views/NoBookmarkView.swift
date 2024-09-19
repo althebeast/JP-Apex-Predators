@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoBookmarkView: View {
     
-    @Environment (BookmarkViewModel.self) var bookmarkVm
+    @Environment(BookmarkViewModel.self) var bookmarkVm
     
     var body: some View {
         VStack (spacing: 20) {
@@ -47,7 +47,7 @@ struct NoBookmarkView: View {
     
     func addAnimation() {
         guard !bookmarkVm.animate else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation(
                 Animation
                     .easeInOut(duration: 2.0)

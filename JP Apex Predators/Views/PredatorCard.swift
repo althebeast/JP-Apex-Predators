@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PredatorCard: View {
     
-    @Environment (BookmarkViewModel.self) var bookmarkVm
+    @Environment(BookmarkViewModel.self) var bookmarkVm
     
     let predator: ApexPredator
     
@@ -80,5 +80,4 @@ struct PredatorCard: View {
 #Preview {
     PredatorRow(predator: PredatorController().apexPredators[2])
         .preferredColorScheme(.dark)
-        .previewLayout(.sizeThatFits)
 }

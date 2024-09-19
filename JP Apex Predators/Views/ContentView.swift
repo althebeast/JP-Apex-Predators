@@ -68,5 +68,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(ViewModel())
+        .environmentObject(ViewModel())
 }

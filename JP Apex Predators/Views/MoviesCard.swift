@@ -7,11 +7,10 @@
 
 import SwiftUI
 import CachedAsyncImage
-import SystemConfiguration
 
 struct MoviesCard: View {
     
-    @Environment (MovieViewModel.self) var movievm
+    @Environment(MovieViewModel.self) var movievm
     
     @State var selectedImage: Part?
     
@@ -33,11 +32,13 @@ struct MoviesCard: View {
         NavigationView {
             ZStack {
                 
-                if !isInternetAvailable() {
+                if movievm.isInternetAvailable() == false {
                     NoMoviesView(firstTitle: "Looks like there's a problem with your connection 🧐",
                                  secondTitle: "Why don't you check your connection so you can see all of the Jurassic Park movies 🤩",
                                  buttonTitle: "Try Again")
-                        .transition(AnyTransition.opacity.animation(.easeIn))
+                    .transition(.asymmetric(
+                        insertion: AnyTransition.opacity.animation(.easeIn),
+                        removal: .move(edge: .leading)))
                 } else {
                     VStack(spacing: 0) {
                             List(movievm.parts) { part in
@@ -112,7 +113,7 @@ struct MoviesCard: View {
                                 .multilineTextAlignment(.leading)
                                 .listRowSeparator(.hidden)
                             }
-                            
+                            .scrollIndicators(.hidden)
                             .listStyle(.plain)
                             .refreshable {
                                 movievm.fetcData()
@@ -131,27 +132,6 @@ struct MoviesCard: View {
             MovieImageSheetView(imageToShow: j)
         }
     }
-    
-    func isInternetAvailable() -> Bool
-        {
-            var zeroAddress = sockaddr_in()
-            zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
-            zeroAddress.sin_family = sa_family_t(AF_INET)
-
-            let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
-                $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
-                    SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
-                }
-            }
-
-            var flags = SCNetworkReachabilityFlags()
-            if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
-                return false
-            }
-            let isReachable = flags.contains(.reachable)
-            let needsConnection = flags.contains(.connectionRequired)
-            return (isReachable && !needsConnection)
-        }
 }
 
 #Preview {

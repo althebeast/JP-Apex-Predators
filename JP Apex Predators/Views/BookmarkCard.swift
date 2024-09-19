@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BookmarkCard: View {
     
-    @Environment (BookmarkViewModel.self) var bookmarkVm
+    @Environment(BookmarkViewModel.self) var bookmarkVm
     
     var body: some View {
         NavigationStack {

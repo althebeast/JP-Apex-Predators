@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoMoviesView: View {
     
-    @Environment (MovieViewModel.self) var movievm
+    @Environment(MovieViewModel.self) var movievm
     
     var firstTitle: String
     var secondTitle: String
@@ -28,8 +28,6 @@ struct NoMoviesView: View {
                 .padding(.horizontal)
             
             Button(action: {
-                
-                movievm.fetcData()
                 
             }, label: {
                 Text(buttonTitle)

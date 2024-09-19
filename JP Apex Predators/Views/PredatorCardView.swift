@@ -10,7 +10,7 @@ import _MapKit_SwiftUI
 
 struct PredatorCardView: View {
     
-    @Environment (ViewModel.self) var viewModel
+    @Environment(ViewModel.self) var viewModel
     
     let predator: [ApexPredator]
     
