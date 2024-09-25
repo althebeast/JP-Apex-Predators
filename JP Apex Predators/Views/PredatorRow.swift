@@ -38,5 +38,5 @@ struct PredatorRow: View {
 #Preview {
     PredatorRow(predator: PredatorController().apexPredators[2])
         .preferredColorScheme(.dark)
-        .previewLayout(.sizeThatFits)
+        //.previewLayout(.sizeThatFits)
 }

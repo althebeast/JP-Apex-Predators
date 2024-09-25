@@ -11,16 +11,16 @@ import SwiftUI
 struct JP_Apex_PredatorsApp: App {
     
     @AppStorage("isLightMode") private var isLightMode = false
-    @StateObject var viewModel = ViewModel()
-    @StateObject var bookmarkvm = BookmarkViewModel()
-    @StateObject var movievm = MovieViewModel()
+    @State var viewModel = ViewModel()
+    @State var bookmarkvm = BookmarkViewModel()
+    @State var movievm = MovieViewModel()
     
     var body: some Scene {
         WindowGroup {
             PredatorTabView()
-                .environmentObject(ViewModel())
-                .environmentObject(BookmarkViewModel())
-                .environmentObject(MovieViewModel())
+                .environment(ViewModel())
+                .environment(BookmarkViewModel())
+                .environment(MovieViewModel())
                 .preferredColorScheme(isLightMode ? .light : .dark)
         }
     }

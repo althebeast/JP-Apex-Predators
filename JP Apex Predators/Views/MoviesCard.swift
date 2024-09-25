@@ -32,9 +32,8 @@ struct MoviesCard: View {
         NavigationView {
             ZStack {
                 
-                if movievm.isInternetAvailable() == false {
+                if !movievm.isInternetAvailable() {
                     NoMoviesView(firstTitle: "Looks like there's a problem with your connection 🧐",
-                                 secondTitle: "Why don't you check your connection so you can see all of the Jurassic Park movies 🤩",
                                  buttonTitle: "Try Again")
                     .transition(.asymmetric(
                         insertion: AnyTransition.opacity.animation(.easeIn),
@@ -53,7 +52,7 @@ struct MoviesCard: View {
                                                 Spacer()
                                             }
                                         case .success(let image):
-                                            if geo.size.height > 1000 {
+                                            if geo.size.height > 1000 || geo.size.width > geo.size.height {
                                                 image
                                                     .resizable()
                                                     .scaledToFit()

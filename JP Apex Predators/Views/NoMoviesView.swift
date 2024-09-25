@@ -12,33 +12,36 @@ struct NoMoviesView: View {
     @Environment(MovieViewModel.self) var movievm
     
     var firstTitle: String
-    var secondTitle: String
     var buttonTitle: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
+            
+            Spacer()
+            
             Text(firstTitle)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding(.horizontal)
             
-            Text(secondTitle)
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .padding(.horizontal)
+            Image("appstore")
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .padding()
+                .shadow(color: .white, radius: movievm.animate ? 15 : 5)
             
-            Button(action: {
-                
-            }, label: {
-                Text(buttonTitle)
-                    .foregroundStyle(.white)
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(movievm.animate ? movievm.firstColor : movievm.secondColor)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-            })
+            Spacer()
+            
+            Text("Check your connection and try again 🥳")
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .foregroundStyle(.white)
+                .font(.system(size: 15))
+                .fontWeight(.semibold)
+                .frame(height: 55)
+                .frame(maxWidth: .infinity)
+                .background(movievm.animate ? movievm.firstColor : movievm.secondColor)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
             .padding(.horizontal, movievm.animate ? 30 : 50)
             .shadow(color: movievm.animate ? movievm.firstColor.opacity(0.7) : movievm.secondColor.opacity(0.7),
                     radius: movievm.animate ? 30 : 10,
@@ -46,6 +49,8 @@ struct NoMoviesView: View {
                     y: movievm.animate ? 50 : 30)
             .scaleEffect(movievm.animate ? 1.1 : 1.0)
             .offset(y: movievm.animate ? -7 : 0)
+            
+            Spacer()
         }
         .onAppear(perform: addAnimation)
     }
@@ -65,7 +70,7 @@ struct NoMoviesView: View {
 }
 
 #Preview {
-    NoMoviesView(firstTitle: "Looks like there's a problem with your connection 🧐", secondTitle: "Why don't you check your connection so you can see all of the Jurassic Park movies 🤩", buttonTitle: "Try Again")
+    NoMoviesView(firstTitle: "Looks like there's a problem with your connection 🧐", buttonTitle: "Try Again")
         .environmentObject(MovieViewModel())
         .preferredColorScheme(.dark)
 }

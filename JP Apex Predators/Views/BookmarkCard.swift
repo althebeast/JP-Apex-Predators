@@ -14,12 +14,12 @@ struct BookmarkCard: View {
     var body: some View {
         NavigationStack {
                 ZStack {
-                    if bookmarkVm.bookmarks.isEmpty {
+                    if self.bookmarkVm.bookmarks.isEmpty {
                         NoBookmarkView()
                             .transition(AnyTransition.opacity.animation(.easeIn))
                     } else {
                         ScrollView {
-                        PredatorCardView(predator: bookmarkVm.bookmarks)
+                            PredatorCardView(predator: self.bookmarkVm.bookmarks)
                     }
                         .scrollIndicators(.hidden)
                 }
@@ -41,6 +41,6 @@ struct BookmarkCard: View {
 
 #Preview {
     BookmarkCard()
-        .environmentObject(BookmarkViewModel())
+        .environment(BookmarkViewModel())
         .preferredColorScheme(.dark)
 }

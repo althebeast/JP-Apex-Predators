@@ -19,7 +19,7 @@ struct ContentView: View {
         NavigationStack {
             GeometryReader { geo in
                 ScrollView(showsIndicators: false) {
-                    ForEach(viewModel.filteredDinos) { predator in
+                    ForEach(self.viewModel.filteredDinos) { predator in
                             VStack {
                                 NavigationLink(destination: PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 2000)))) {
                                     withAnimation {
@@ -36,12 +36,12 @@ struct ContentView: View {
                         ToolbarItem(placement: .topBarLeading) {
                             Button(action: {
                                 withAnimation {
-                                    viewModel.alphabetical.toggle()
+                                    self.viewModel.alphabetical.toggle()
                                 }
                             },
                                    label: {
-                                Image(systemName: viewModel.alphabetical ? "film" : "textformat")
-                                    .symbolEffect(.bounce, value: viewModel.alphabetical)
+                                Image(systemName: self.viewModel.alphabetical ? "film" : "textformat")
+                                    .symbolEffect(.bounce, value: self.viewModel.alphabetical)
                                 // ? anlamı = alphabetical doğru ise... film kullan : anlamı doğru değil ise... textformat kullan. Ve bu şekilde yazılınca adı Ternary if statement oluyor.
                             })
                         }
@@ -68,5 +68,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(ViewModel())
+        .environment(ViewModel())
 }
