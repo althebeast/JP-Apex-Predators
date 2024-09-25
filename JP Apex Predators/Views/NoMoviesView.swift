@@ -15,7 +15,7 @@ struct NoMoviesView: View {
     var buttonTitle: String
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .center, spacing: 20) {
             
             Spacer()
             
@@ -27,7 +27,7 @@ struct NoMoviesView: View {
             Image("appstore")
                 .resizable()
                 .scaledToFit()
-                .clipShape(Circle())
+                .clipShape(RoundedRectangle(cornerRadius: 120))
                 .padding()
                 .shadow(color: .white, radius: movievm.animate ? 15 : 5)
             
