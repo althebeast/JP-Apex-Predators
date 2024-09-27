@@ -104,6 +104,19 @@ struct Paywall: View {
                     }
                 }
                 
+                Button {
+                    Purchases.shared.restorePurchases { ( customerInfo, error ) in
+                        
+                        paywallViewModel.isSubsriptionActive =  customerInfo?.entitlements.all["Pro"]?.isActive == true
+                    }
+                } label: {
+                    Text("Restore Purchases")
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .padding(.vertical, 10)
+                }
+
+                
                 Spacer()
             }
             .onAppear {
