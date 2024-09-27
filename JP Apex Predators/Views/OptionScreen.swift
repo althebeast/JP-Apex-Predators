@@ -12,7 +12,12 @@ struct OptionScreen: View {
     
     @AppStorage("isLightMode") public var isLightMode = false
     
+    @Environment(PaywallViewModel.self) var paywallViewModel
+    
     var body: some View {
+        
+        @Bindable var vm = paywallViewModel
+        
         NavigationStack {
             List {
                 
@@ -40,10 +45,32 @@ struct OptionScreen: View {
                                 .foregroundStyle(isLightMode ? Color(.black) : Color(.white))
                     .navigationTitle("Settings")
                 }
+                
+                    Section(header: Text("👑 Become Premium 👑")) {
+                        if !paywallViewModel.isSubsriptionActive {
+                            Button {
+                                if paywallViewModel.isSubsriptionActive {
+                                    paywallViewModel.isPaywallPresented = false
+                                } else {
+                                    paywallViewModel.isPaywallPresented = true
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: "crown")
+                                    Text("Become a Premium Member Now 🤩")
+                                }
+                            }
+                    } else {
+                        Text("You're a Premium Member 👑")
+                }
+                }
             }
             }
+        .sheet(isPresented: $vm.isPaywallPresented) {
+            Paywall()
         }
-    }
+        }
+        }
 
 struct RateTheApp: View {
     
@@ -112,9 +139,10 @@ struct Privacy: View {
             }
     })
 }
-                 }
+}
 
 #Preview {
     OptionScreen()
         .preferredColorScheme(.dark)
+        .environment(PaywallViewModel())
 }

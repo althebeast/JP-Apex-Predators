@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 @main
 struct JP_Apex_PredatorsApp: App {
@@ -14,6 +15,7 @@ struct JP_Apex_PredatorsApp: App {
     @State var viewModel = ViewModel()
     @State var bookmarkvm = BookmarkViewModel()
     @State var movievm = MovieViewModel()
+    @State var paywallVm = PaywallViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -21,7 +23,15 @@ struct JP_Apex_PredatorsApp: App {
                 .environment(ViewModel())
                 .environment(BookmarkViewModel())
                 .environment(MovieViewModel())
+                .environment(PaywallViewModel())
                 .preferredColorScheme(isLightMode ? .light : .dark)
         }
+    }
+    
+    init() {
+        
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_COoVDmAQazLwdADseTbEwSXPzkr")
+        
     }
 }

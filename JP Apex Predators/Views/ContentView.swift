@@ -11,6 +11,7 @@ import MapKit
 struct ContentView: View {
     
     @Environment(ViewModel.self) var viewModel
+    @Environment(PaywallViewModel.self) var paywallViewModel
     
     var body: some View {
         
@@ -19,7 +20,17 @@ struct ContentView: View {
         NavigationStack {
             GeometryReader { geo in
                 ScrollView(showsIndicators: false) {
-                    ForEach(self.viewModel.filteredDinos) { predator in
+                    ForEach(Array(viewModel.filteredDinos.enumerated()), id: \.offset) { index, predator in
+                        if index > 2 && !paywallViewModel.isSubsriptionActive {
+                            VStack {
+                                NavigationLink {
+                                    Paywall()
+                                } label: {
+                                    PredatorCard(predator: predator)
+                                }
+                            }
+                            .frame(width: geo.size.width)
+                        } else {
                             VStack {
                                 NavigationLink(destination: PredatorDetail(predator: predator, position: .camera(MapCamera(centerCoordinate: predator.location, distance: 2000)))) {
                                     withAnimation {
@@ -28,6 +39,7 @@ struct ContentView: View {
                                 }
                             }
                             .frame(width: geo.size.width)
+                        }
                         }
                     .navigationTitle("Jurassic Journey")
                     .searchable(text: $vm.searchText)
@@ -69,4 +81,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environment(ViewModel())
+        .environment(PaywallViewModel())
 }

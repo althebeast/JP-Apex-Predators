@@ -19,8 +19,11 @@ struct PredatorDetail: View {
     @State var position: MapCameraPosition
     
     @Environment(\.requestReview) var requestReview
+    @Environment(PaywallViewModel.self) var paywallViewModel
     
     var body: some View {
+        
+        @Bindable var vm = paywallViewModel
         
         GeometryReader { geo in
             ScrollView(showsIndicators: false) {
@@ -41,10 +44,31 @@ struct PredatorDetail: View {
                     //Dino Image
                     NavigationLink{
                         withAnimation {
-                            Image(predator.image)
-                                .resizable()
-                                .scaledToFit()
-                            .scaleEffect(x: -1)
+                            VStack {
+                                HStack() {
+                                    Image(predator.image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .scaleEffect(x: -1)
+                                    
+                                    VStack(alignment: .trailing) {
+                                        Button {
+                                            if paywallViewModel.isSubsriptionActive {
+                                                let imageSaver = ImageSaver()
+                                                imageSaver.writeToPhotoAlbum(image: UIImage(named: predator.image)!)
+                                            } else {
+                                                paywallViewModel.isPaywallPresented = true
+                                            }
+                                        } label: {
+                                            Image(systemName: "arrow.down.circle.fill")
+                                                .font(.title)
+                                        }
+                                        
+                                        Spacer()
+                                    }
+                                    .padding()
+                                }
+                            }
                         }
                     } label: {
                         if geo.size.height > geo.size.width {
@@ -81,7 +105,11 @@ struct PredatorDetail: View {
                         
                         if predator.sound.sounds != nil {
                             Button {
-                                play(sound: "\(predator.sound.sounds ?? "velociraptor.mp3")")
+                                if paywallViewModel.isSubsriptionActive {
+                                    play(sound: "\(predator.sound.sounds ?? "velociraptor.mp3")")
+                                } else {
+                                    paywallViewModel.isPaywallPresented = true
+                                }
                             } label: {
                                 Image(systemName: "waveform")
                                     .font(.largeTitle)
@@ -178,6 +206,9 @@ struct PredatorDetail: View {
                 .ignoresSafeArea()
             }
             .toolbarBackground(.automatic)
+            .sheet(isPresented: $vm.isPaywallPresented) {
+                Paywall()
+            }
         }
     }
     
@@ -185,5 +216,6 @@ struct PredatorDetail: View {
         NavigationStack{
             PredatorDetail(predator: PredatorController().apexPredators[2], position: .camera(MapCamera(centerCoordinate: PredatorController().apexPredators[2].location, distance: 30000)))
                 .preferredColorScheme(.dark)
+                .environment(PaywallViewModel())
         }
     }
