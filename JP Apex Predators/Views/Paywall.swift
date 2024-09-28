@@ -63,7 +63,7 @@ struct Paywall: View {
                     
                     HStack {
                         Image(systemName: "checkmark.seal.fill")
-                        Text("Read about Jurassic Park movie chacters")
+                        Text("See all dinasours places in the map")
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -98,6 +98,7 @@ struct Paywall: View {
                                 
                                 Text("Become Premium Now For Only \(pkg.storeProduct.localizedPriceString)")
                                     .fontWeight(.semibold)
+                                    .foregroundStyle(.white)
                             }
                         }
                         .padding(.horizontal)
@@ -114,6 +115,7 @@ struct Paywall: View {
                         .font(.caption2)
                         .fontWeight(.semibold)
                         .padding(.vertical, 10)
+                        .foregroundStyle(.white)
                 }
 
                 
