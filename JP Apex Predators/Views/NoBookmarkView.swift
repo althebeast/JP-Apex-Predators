@@ -12,19 +12,18 @@ struct NoBookmarkView: View {
     @Environment(BookmarkViewModel.self) var bookmarkVm
     
     var body: some View {
-        VStack (spacing: 20) {
+        VStack (spacing: 15) {
             
             Spacer()
             
-            Image(systemName: "star")
-                .renderingMode(.template)
+            Image("dinosaur3big")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 350, height: 350)
                 .foregroundStyle(bookmarkVm.animate ? bookmarkVm.secondColor : bookmarkVm.firstColor)
-                .font(.system(size: 120))
-                .shadow(color: bookmarkVm.animate ? Color.white.opacity(0.7) : bookmarkVm.secondColor.opacity(0.7),
-                        radius: bookmarkVm.animate ? 30 : 10,
-                        x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/,
-                        y: bookmarkVm.animate ? -50 : 30)
-                .scaleEffect(bookmarkVm.animate ? 1.3 : 1.0)
+                .shadow(color: .white,
+                        radius: bookmarkVm.animate ? 5 : 15)
+                .scaleEffect(bookmarkVm.animate ? 1.1 : 1.0)
                 .offset(y: bookmarkVm.animate ? -7 : 0)
             
             Text("Looks like you didn't mark any dinasours as your favorite ☹️🥺")

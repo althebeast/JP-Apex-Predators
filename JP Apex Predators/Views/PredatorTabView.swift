@@ -10,28 +10,47 @@ import SwiftUI
 struct PredatorTabView: View {
     
     @AppStorage("isLightMode") public var isLightMode = false
-    //@State private var activeTab = 0
     
     var body: some View {
         TabView() {
             ContentView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    VStack{
+                        Image("dinosaur2")
+                        Text("Dinosaurs")
+                    }
+                }
+            
+            CharacterCard()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.2.crop.square.stack.fill")
+                        Text("Characters")
+                    }
                 }
             
             MoviesCard()
                 .tabItem {
-                    Label("Movies", systemImage: "tv")
+                    VStack {
+                        Image("movies-2")
+                        Text("Movies")
+                    }
                 }
             
             BookmarkCard()
                 .tabItem {
-                    Label("Favorites", systemImage: "star")
+                    VStack {
+                        Image("dinosaur3")
+                        Text("Favorites")
+                    }
                 }
             
             OptionScreen()
                 .tabItem { 
-                    Label("Settings", systemImage: "gear")
+                    VStack {
+                        Image("egg-2")
+                        Text("Settings")
+                    }
                 }
         }
         .tint(isLightMode ? .black : .accentColor)
