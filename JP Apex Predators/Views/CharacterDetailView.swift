@@ -31,7 +31,7 @@ extension CharacterDetailView {
             
                 Image(character.name)
                     .resizable()
-                    .frame(width: .infinity, height: 428)
+                    .frame(width: UIScreen.main.bounds.width, height: 428)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .overlay {
                         LinearGradient(stops: [
