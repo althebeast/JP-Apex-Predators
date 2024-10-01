@@ -37,12 +37,16 @@ struct OptionScreen: View {
                 Section(header: Text("About the app")) {
                             RateTheApp()
                                 .foregroundStyle(isLightMode ? Color(.black) : Color(.white))
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             Recommend()
                                 .foregroundStyle(isLightMode ? Color(.black) : Color(.white))
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             Feedback()
                                 .foregroundStyle(isLightMode ? Color(.black) : Color(.white))
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             Privacy()
                                 .foregroundStyle(isLightMode ? Color(.black) : Color(.white))
+                                .frame(maxWidth: .infinity, alignment: .leading)
                     .navigationTitle("Settings")
                 }
                 
@@ -58,6 +62,9 @@ struct OptionScreen: View {
                                 HStack {
                                     Image(systemName: "crown")
                                     Text("Become a Premium Member Now 🤩")
+                                        .font(.title3)
+                                        .foregroundStyle(isLightMode ? Color(.black) : Color(.white))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
                                 }
                             }
                     } else {
@@ -69,8 +76,8 @@ struct OptionScreen: View {
         .sheet(isPresented: $vm.isPaywallPresented) {
             Paywall()
         }
-        }
-        }
+    }
+}
 
 struct RateTheApp: View {
     

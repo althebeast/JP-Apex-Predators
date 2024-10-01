@@ -60,6 +60,6 @@ struct NoBookmarkView: View {
 
 #Preview {
     NoBookmarkView()
-        .environmentObject(BookmarkViewModel())
+        .environment(BookmarkViewModel())
         .preferredColorScheme(.dark)
 }

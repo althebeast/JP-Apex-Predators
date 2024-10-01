@@ -16,6 +16,7 @@ struct JP_Apex_PredatorsApp: App {
     @State var bookmarkvm = BookmarkViewModel()
     @State var movievm = MovieViewModel()
     @State var paywallVm = PaywallViewModel()
+    @State var characterVm = CharacterViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -24,6 +25,7 @@ struct JP_Apex_PredatorsApp: App {
                 .environment(BookmarkViewModel())
                 .environment(MovieViewModel())
                 .environment(PaywallViewModel())
+                .environment(CharacterViewModel())
                 .preferredColorScheme(isLightMode ? .light : .dark)
         }
     }

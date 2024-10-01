@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable
-class BookmarkViewModel: ObservableObject {
+class BookmarkViewModel {
     
     private(set) var bookmarks: [ApexPredator] = []
     private let bookmarkStore = PlistDataStore<[ApexPredator]>(filename: "bookmarks")

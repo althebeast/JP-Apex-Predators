@@ -135,6 +135,6 @@ struct MoviesCard: View {
 
 #Preview {
     MoviesCard()
-        .environmentObject(MovieViewModel())
+        .environment(MovieViewModel())
         .preferredColorScheme(.dark)
 }

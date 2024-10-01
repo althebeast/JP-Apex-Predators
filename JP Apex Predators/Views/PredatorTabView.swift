@@ -35,7 +35,9 @@ struct PredatorTabView: View {
                         Image("movies-2")
                         Text("Movies")
                     }
+                    .foregroundStyle(isLightMode ? .black : .white)
                 }
+                
             
             BookmarkCard()
                 .tabItem {
@@ -53,7 +55,7 @@ struct PredatorTabView: View {
                     }
                 }
         }
-        .tint(isLightMode ? .black : .accentColor)
+        .tint(isLightMode ? .gray : .white)
     }
 }
 

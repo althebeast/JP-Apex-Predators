@@ -113,6 +113,7 @@ struct PredatorDetail: View {
                             } label: {
                                 Image(systemName: "waveform")
                                     .font(.largeTitle)
+                                    .foregroundStyle(Color("WaveButton"))
                             }
                         } else {
                             

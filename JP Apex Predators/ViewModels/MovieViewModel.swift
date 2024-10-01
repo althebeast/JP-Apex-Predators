@@ -10,7 +10,7 @@ import SwiftUI
 import SystemConfiguration
 
 @Observable
-class MovieViewModel: ObservableObject {
+class MovieViewModel {
     
     var parts = [Part]()
     
