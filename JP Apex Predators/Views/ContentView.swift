@@ -61,7 +61,7 @@ struct ContentView: View {
     @ViewBuilder
     private func dinosList(geo: GeometryProxy) -> some View {
         ForEach(Array(viewModel.filteredDinos.enumerated()), id: \.offset) { index, predator in
-            if index > 2 && !paywallViewModel.isSubsriptionActive {
+            if index > 0 && !paywallViewModel.isSubsriptionActive {
                 paywallLink(for: predator, geo: geo)
             } else {
                 predatorLink(for: predator, geo: geo)

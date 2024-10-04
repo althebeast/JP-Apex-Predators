@@ -13,6 +13,7 @@ struct CharacterModel: Identifiable, Decodable, Equatable {
     var name: String
     var role: String
     var movies: [String]
+    var images: [String]
     var movieScenes: [MoviesScene]
     var link: String
 }

@@ -29,18 +29,17 @@ extension CharacterDetailView {
     func CharacterDetail(character: CharacterModel) -> some View {
         ScrollView {
             
-                Image(character.name)
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width, height: 428)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .overlay {
-                        LinearGradient(stops: [
-                            Gradient.Stop(color: .clear, location: 0.7),
-                            Gradient.Stop(color: Color("SheetBackground"), location: 1)
-                        ],
-                                       startPoint: .top,
-                                       endPoint: .bottom)
-                    }
+            TabView {
+                ForEach(character.images, id: \.self) { image in
+                    Image(image)
+                        .resizable()
+                        .imageModifiers()
+                }
+                    
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .frame(width: UIScreen.main.bounds.width, height: 428)
+            
             
             VStack(alignment: .leading) {
                     Text("\(character.name): \(character.role)")
@@ -88,5 +87,19 @@ extension CharacterDetailView {
             .padding()
         }
         .scrollIndicators(.hidden)
+    }
+}
+
+extension View {
+    func imageModifiers() -> some View {
+        self.clipShape(RoundedRectangle(cornerRadius: 20))
+            .overlay {
+                LinearGradient(stops: [
+                    Gradient.Stop(color: .clear, location: 0.7),
+                    Gradient.Stop(color: Color("SheetBackground"), location: 1)
+                ],
+                               startPoint: .top,
+                               endPoint: .bottom)
+            }
     }
 }

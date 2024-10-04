@@ -8,6 +8,11 @@
 			"Jurassic Park III",
             "Jurassic World: Dominion"
 		],
+        "images": [
+            "Alan Grant",
+            "Alan Grant-2",
+            "Alan Grant-3"
+        ],
 		"movieScenes": [
 			{
                 "id": 1,
@@ -36,6 +41,12 @@
             "The Lost World: Jurassic Park",
             "Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+        ],
+        "images": [
+            "Ian Malcolm",
+            "Ian Malcolm-2",
+            "Ian Malcolm-3",
+            "Ian Malcolm-4"
         ],
         "movieScenes": [
             {
@@ -70,6 +81,11 @@
             "Jurassic Park III",
             "Jurassic World: Dominion"
         ],
+        "images": [
+            "Ellie Sattler",
+            "Ellie Sattler-2",
+            "Ellie Sattler-3"
+        ],
         "movieScenes": [
             {
                 "id": 1,
@@ -96,6 +112,9 @@
         "movies": [
             "Jurassic Park"
         ],
+        "images": [
+            "Dennis Nedry"
+        ],
         "movieScenes": [
             {
                 "id": 1,
@@ -112,6 +131,10 @@
         "movies": [
             "Jurassic Park",
             "The Lost World: Jurassic Park"
+        ],
+        "images": [
+            "John Hammond",
+            "John Hammond-2"
         ],
         "movieScenes": [
             {
@@ -135,6 +158,11 @@
             "Jurassic World",
             "Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+        ],
+        "images": [
+            "Owen Grady",
+            "Owen Grady-2",
+            "Owen Grady-3"
         ],
         "movieScenes": [
             {
@@ -163,6 +191,11 @@
             "Jurassic World",
             "Jurassic World: Fallen Kingdom",
             "Jurassic World: Dominion"
+        ],
+        "images": [
+            "Claire Dearing",
+            "Claire Dearing-2",
+            "Claire Dearing-3"
         ],
         "movieScenes": [
             {
