@@ -31,6 +31,7 @@ struct CharacterCard: View {
         }
         .sheet(item: $characterVM.selectedCharacter) { character in
             CharacterDetailView(character: character)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.85)
         }
         .sheet(isPresented: $paywallVM.isPaywallPresented) {
             Paywall()

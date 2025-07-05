@@ -2,6 +2,7 @@
 	{
 		"id": 1,
 		"name": "Velociraptor",
+        "isNew": false,
         "type": "land",
         "sound": "velociraptor",
         "latitude": 32.8236,
@@ -59,6 +60,7 @@
     {
         "id": 2,
         "name": "Brachiosaurus",
+        "isNew": false,
         "type": "land",
         "sound": "brachiosaurus",
         "latitude": 41.1403,
@@ -105,6 +107,7 @@
 	{
 		"id": 3,
 		"name": "Tyrannosaurus Rex",
+        "isNew": false,
 		"type": "land",
         "sound": "tyrannosaurusrex",
         "latitude": 36.1129,
@@ -163,6 +166,7 @@
 	{
 		"id": 4,
 		"name": "Dilophosaurus",
+        "isNew": false,
 		"type": "land",
         "sound": "dilophosaurus",
         "latitude": 35.0875713,
@@ -197,6 +201,7 @@
 	{
 		"id": 5,
 		"name": "Compsognathus",
+        "isNew": false,
 		"type": "land",
         "sound": "compsognathus",
         "latitude": 44.35894,
@@ -243,6 +248,7 @@
 	{
 		"id": 6,
 		"name": "Stegosaurus",
+        "isNew": false,
 		"type": "land",
         "sound": "stegosaurus",
         "latitude": 37.3346,
@@ -295,6 +301,7 @@
 	{
 		"id": 7,
 		"name": "Pachycephalosaurus",
+        "isNew": false,
 		"type": "land",
         "sound": "pachycephalosaurus",
         "latitude": 35.794540,
@@ -329,6 +336,7 @@
 	{
 		"id": 8,
 		"name": "Pteranodon",
+        "isNew": false,
 		"type": "air",
         "sound": "pteranodon",
         "latitude": 32.7848,
@@ -378,6 +386,7 @@
 	{
 		"id": 9,
 		"name": "Spinosaurus",
+        "isNew": false,
 		"type": "land",
         "sound": "spinosaurus",
         "latitude": 39.7374974,
@@ -406,6 +415,7 @@
 	{
 		"id": 10,
 		"name": "Indominus Rex",
+        "isNew": false,
 		"type": "land",
         "sound": "indominusrex",
         "latitude": 28.5729,
@@ -432,6 +442,7 @@
 	{
 		"id": 11,
 		"name": "Mosasaurus",
+        "isNew": false,
 		"type": "sea",
         "sound": "mosasaurus",
         "latitude": 65.53627,
@@ -468,6 +479,7 @@
 	{
 		"id": 12,
 		"name": "Dimorphodon",
+        "isNew": false,
 		"type": "air",
         "sound": "dimorphodon",
         "latitude": 40.7484,
@@ -498,6 +510,7 @@
     {
         "id": 13,
         "name": "Baryonyx",
+        "isNew": false,
         "type": "land",
         "sound": "baryonyx",
         "latitude": 43.4927,
@@ -532,6 +545,7 @@
     {
         "id": 14,
         "name": "Carnotaurus",
+        "isNew": false,
         "type": "land",
         "sound": "carnotaurus",
         "latitude": 36.8791,
@@ -566,6 +580,7 @@
     {
         "id": 15,
         "name": "Allosaurus",
+        "isNew": false,
         "type": "land",
         "sound": "allosaurus",
         "latitude": 34.1381,
@@ -600,6 +615,7 @@
 	{
 		"id": 16,
 		"name": "Indoraptor",
+        "isNew": false,
 		"type": "land",
         "sound": "indoraptor",
         "latitude": 35.540698,
@@ -628,6 +644,7 @@
     {
         "id": 17,
         "name": "Quetzalcoatlus",
+        "isNew": false,
         "type": "air",
         "sound": "quetzalcoatlus",
         "latitude": 40.6892,
@@ -651,6 +668,7 @@
     {
         "id": 18,
         "name": "Giganotosaurus",
+        "isNew": false,
         "type": "land",
         "sound": "giganotosaurus",
         "latitude": 38.7436,
@@ -679,6 +697,7 @@
     {
         "id": 19,
         "name": "Atrociraptor",
+        "isNew": false,
         "type": "land",
         "sound": "atrociraptor",
         "latitude": 40.2888,
@@ -706,6 +725,7 @@
     {
         "id": 20,
         "name": "Therizinosaurus",
+        "isNew": false,
         "type": "land",
         "sound": "therizinosaurus",
         "latitude": 40.9857,
@@ -732,6 +752,7 @@
     {
         "id": 21,
         "name": "Pyroraptor",
+        "isNew": false,
         "type": "land",
         "sound": "pyroraptor",
         "latitude": 58.4409,
@@ -755,5 +776,133 @@
             }
         ],
         "link": "https://jurassicpark.fandom.com/wiki/Pyroraptor"
+    },
+    {
+        "id": 22,
+        "name": "Distortus rex",
+        "isNew": true,
+        "type": "land",
+        "sound": "distortusrex",
+        "latitude": 58.4409,
+        "longitude": -134.5459,
+        "movies": [
+            "Jurassic World: Rebirth"
+        ],
+        "specs": [
+            "Name Meaning: Deformed King",
+            "Height: 8.1 meters (26.57 feet)",
+            "Length: 14.5 meters (47.57 feet)",
+            "Weight: 2 Elephants (5-7 tons)",
+            "Birth Type: Egg (presumed)"
+        ],
+        "movie_scenes": [
+            {
+                "id": 1,
+                "movie": "Jurassic World: Rebirth",
+                "scene_description": "In 2027, Henry Loomis and Duncan Kincaid were inside of the lab. Duncan ran off to get the attention of the rescue helicopter. Henry, alone, saw the D. rex pass through where its pen once was. He also ran out to get the attention of the helicopter. It walked behind him and grabbed the helicopter effortlessly. The D. rex bit it to shreds, and then threw it. The helicopter exploded. The entire group was trapped in with a Mutadon. Isabella was opening the gate for them to escape, when the D. rex came lumbering through. Martin drove towards it, trying to get to the dock. The creature smashed the front of the Jeep in, with him flying into its arm. The creature grabbed him and bit him in half. It left his arm to fall alongside the briefcase filled with dinosaur blood. The rest of the group ran off. They made it down to the dock and tried to lower a boat to escape. The system sounded an alarm that it was jammed, which attracted the D. rex. Duncan led it into the swamp, while the group got in the boat. The boat started stalling as the D. rex lumbered over to them again. The boat started just in time as they drove off. The D. rex stood up on its back legs, propping itself up on the dock with one arm. It roared and turned back around into the forest."
+            }
+        ],
+        "link": "https://jurassicpark.fandom.com/wiki/Distortus_rex"
+    },
+    {
+        "id": 23,
+        "name": "Mutadon",
+        "isNew": true,
+        "type": "land",
+        "sound": "mutadon",
+        "latitude": 58.4409,
+        "longitude": -134.5459,
+        "movies": [
+            "Jurassic World: Rebirth"
+        ],
+        "specs": [
+            "Name Meaning: Mutant/Mutated tooth/teeth",
+            "Birth Type: Egg (presumed)"
+        ],
+        "movie_scenes": [
+            {
+                "id": 1,
+                "movie": "Jurassic World: Rebirth",
+                "scene_description": "The Mutadons were created by InGen as one of many experimental hybrids on Ile Saint-Hubert. However, after the facility was abandoned when the Distortus rex breached the facility, the Mutadons managed to escape and were left to roam the island freely for the next seventeen years. In 2027, a Mutadon appeared, ambushing and killing one of two Velociraptors attempting to ambush Xavier Dobbs, dragging its corpse away. Later on, a pair were drawn to the InGen facility to hunt the group down. One was shot dead by Zora Bennett after it crawled after her in a ventilation duct, the other was left trapped after a gate was closed on it."
+            }
+        ],
+        "link": "https://jurassicpark.fandom.com/wiki/Mutadon"
+    },
+    {
+        "id": 24,
+        "name": "Titanosaurus",
+        "isNew": true,
+        "type": "land",
+        "sound": "titanosaurus",
+        "latitude": 58.4409,
+        "longitude": -134.5459,
+        "movies": [
+            "Jurassic World: Rebirth"
+        ],
+        "specs": [
+            "Large/Titan/Giant/Titanic/Gigantic lizard",
+            "Height: 15.7 - 17 meters (51-55.1 feet)",
+            "Length: 39 - 44 meters (128 - 144 feet)",
+            "Weight: 195 - 220 tonnes, 11 tonnes (According to Dr. Loomis)",
+            "Birth Type: Egg"
+        ],
+        "movie_scenes": [
+            {
+                "id": 1,
+                "movie": "Jurassic World: Rebirth",
+                "scene_description": "Titanosaurus was among the last of the giant sauropods to walk the Earth. This was a giant plant-eater from the same family as Argentinosaurus. It was probably related to dinosaurs that traveled from South America when it was still connected to Africa. The entire family of these Cretaceous giants is named after this dinosaur, even though only a few bones of Titanosaurus have ever been found. Titanosaurus fossils were discovered in India and were named by Richard Lydekker, a British paleontologist, in 1877. Titanosaurus was a heavily built sauropod, as is typical for this family. Although some members of this family had scutes, it isn't known if any were present on this animal. A number of species exist for this genus and several genera are attributed to the Titanosauria."
+            }
+        ],
+        "link": "https://jurassicpark.fandom.com/wiki/Titanosaurus"
+    },
+    {
+        "id": 25,
+        "name": "Aquilops",
+        "isNew": true,
+        "type": "land",
+        "sound": "aquilops",
+        "latitude": 58.4409,
+        "longitude": -134.5459,
+        "movies": [
+            "Jurassic World: Rebirth"
+        ],
+        "specs": [
+            "Eagle face/faced",
+            "Height: 0.21 meters (0.68 feet)",
+            "Length: 0.54 meters (1.77 feet)",
+            "Weight: 1.5 kilograms",
+            "Birth Type: Egg"
+        ],
+        "movie_scenes": [
+            {
+                "id": 1,
+                "movie": "Jurassic World: Rebirth",
+                "scene_description": "Aquilops (meaning eagle face) is an extinct genus of small ceratopsian from the Early Cretaceous that live in what is now the USA. It was found in the Cloverly Formation, which is the home to many herbivores like Microvenator, Sauropelta, Sauroposeidon, Tenontosaurus, and Zephyrosaurus. Many predators that hunted it are the high-spined Acrocanthosaurus and a cousin to Velociraptor, Deinonychus. The holotype discovered is possibly not a fully grown individual and was believed to be a Zephyrosaurus."
+            }
+        ],
+        "link": "https://jurassicpark.fandom.com/wiki/Aquilops"
+    },
+    {
+        "id": 26,
+        "name": "Anurognathus",
+        "isNew": true,
+        "type": "land",
+        "sound": "anurognathus",
+        "latitude": 58.4409,
+        "longitude": -134.5459,
+        "movies": [
+            "Jurassic World: Rebirth"
+        ],
+        "specs": [
+            "Tailless/Without tail/Frog jaw"
+        ],
+        "movie_scenes": [
+            {
+                "id": 1,
+                "movie": "Jurassic World: Rebirth",
+                "scene_description": "Anurognathus (without tail/frog jaw) was a small rhamphorhynchoid pterosaur from the Late Jurassic Period of southern Germany. It had a wingspan of about 50 cm (20 in). They are insectivores, comparable to the modern frogmouth. Anurognathus seems to have had a disproportionately large skull for such a small creature, but nevertheless, shows adaptations suited to an insectivorous diet. The teeth are small and sharp, and the head is wider than it is long. The eyes are also large and slightly face forwards allowing for some depth perception through what is termed as binocular vision. Study of the eyes and the scleral rings that were inside them lead towards a crepuscular lifestyle, meaning that Anurognathus would have been most active in the twilight of the dawn and dusk. While this tiny pterosaur would have been an accomplished hunter of insects, Anurognathus may have also have been hunted itself by larger pterosaurs. By sticking to being active in the twilight, it may have had easy access to prey while avoiding being out at the same time as either diurnal or nocturnal pterosaurs. Some Paleontologists believe that Anurognathus had a symbiotic relationship with larger animals, like sauropods, and inhabited ecological niche similar to the modern oxpecker, feeding on ectoparasites, particularly ticks, as well as insects infesting wounds and the flesh and blood of some wounds as well."
+            }
+        ],
+        "link": "https://jurassicpark.fandom.com/wiki/Anurognathus"
     }
 ]

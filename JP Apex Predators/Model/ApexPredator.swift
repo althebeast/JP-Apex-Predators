@@ -15,6 +15,7 @@ struct ApexPredator: Codable, Identifiable, Equatable {
     
     let id: Int
     let name: String
+    let isNew: Bool
     let type: PredatorType
     let sound: PredatorSound
     let latitude: Double
@@ -102,6 +103,11 @@ enum PredatorSound: String, Codable {
     case atrociraptor
     case therizinosaurus
     case pyroraptor
+    case distortusrex
+    case mutadon
+    case titanosaurus
+    case aquilops
+    case anurognathus
     
     var sounds: String? {
         switch self {
@@ -146,6 +152,16 @@ enum PredatorSound: String, Codable {
         case .therizinosaurus:
             nil
         case .pyroraptor:
+            nil
+        case .distortusrex:
+            nil
+        case .mutadon:
+            nil
+        case .titanosaurus:
+            nil
+        case .aquilops:
+            nil
+        case .anurognathus:
             nil
         }
     }

@@ -5,27 +5,10 @@
 //  Created by Alperen Sarışan on 26.09.2024.
 //
 
-import Foundation
-import RevenueCat
 import StoreKit
+import RevenueCat
 
-/* Some methods to make displaying subscription terms easier */
-
-extension Package {
-    var terms: String {
-        if let intro = self.storeProduct.introductoryDiscount {
-            if intro.price == 0 {
-                return "\(intro.subscriptionPeriod.periodTitle) free trial"
-            } else {
-                return "\(self.localizedIntroductoryPriceString!) for \(intro.subscriptionPeriod.periodTitle)"
-            }
-        } else {
-            return "Unlocks Premium"
-        }
-    }
-}
-
-extension SubscriptionPeriod {
+extension SKProductSubscriptionPeriod {
     var durationTitle: String {
         switch self.unit {
         case .day: return "day"
@@ -35,10 +18,23 @@ extension SubscriptionPeriod {
         @unknown default: return "Unknown"
         }
     }
-    
+
     var periodTitle: String {
-        let periodString = "\(self.value) \(self.durationTitle)"
-        let pluralized = self.value > 1 ?  periodString + "s" : periodString
-        return pluralized
+        "\(self.numberOfUnits) \(self.durationTitle)\(self.numberOfUnits > 1 ? "s" : "")"
+    }
+}
+
+extension Package {
+    var terms: String {
+        guard let intro = storeProduct.introductoryDiscount,
+              let sk1 = intro.sk1Discount else {
+            return "Unlocks Premium"
+        }
+        let period = sk1.subscriptionPeriod
+        if intro.price == 0 {
+            return "\(period.periodTitle) free trial"
+        } else {
+            return "\(localizedIntroductoryPriceString!) for \(period.periodTitle)"
+        }
     }
 }

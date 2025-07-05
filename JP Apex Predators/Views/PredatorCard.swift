@@ -45,6 +45,14 @@ struct PredatorCard: View {
                     
                     Spacer()
                     
+                    if predator.isNew {
+                        Image("rebirth")
+                            .resizable()
+                            .frame(width: 80)
+                            .clipShape(RoundedRectangle(cornerRadius: 90))
+                            .shadow(color: .white, radius: 5)
+                    }
+                    
                     Button(action: {
                         withAnimation {
                             toggleBookmark(for: predator)

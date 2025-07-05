@@ -14,7 +14,7 @@ struct CharacterDetailView: View {
     let character: CharacterModel
     
     var body: some View {
-        CharacterDetail(character: character)
+            CharacterDetail(character: character)
     }
 }
 
@@ -27,66 +27,81 @@ struct CharacterDetailView: View {
 extension CharacterDetailView {
     
     func CharacterDetail(character: CharacterModel) -> some View {
-        ScrollView {
-            
-            TabView {
-                ForEach(character.images, id: \.self) { image in
-                    Image(image)
-                        .resizable()
-                        .imageModifiers()
+        GeometryReader { geo in
+            ScrollView {
+                
+                if geo.size.height > 1000 || geo.size.height < geo.size.width {
+                    TabView {
+                        ForEach(character.images, id: \.self) { image in
+                            Image(image)
+                                .resizable()
+                                .imageModifiers()
+                        }
+                        
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+                    .frame(width: UIScreen.main.bounds.width, height: 700)
+                } else {
+                    TabView {
+                        ForEach(character.images, id: \.self) { image in
+                            Image(image)
+                                .resizable()
+                                .imageModifiers()
+                        }
+                        
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+                    .frame(width: UIScreen.main.bounds.width, height: 450)
                 }
-                    
-            }
-            .tabViewStyle(PageTabViewStyle())
-            .frame(width: UIScreen.main.bounds.width, height: 428)
-            
-            
-            VStack(alignment: .leading) {
+                
+                
+                VStack(alignment: .leading) {
                     Text("\(character.name): \(character.role)")
                         .font(Font.custom("Nunito", size: 25))
                         .fontWeight(.semibold)
                         .padding(.top, 2)
-                
-                //Appears in
-                Text("Appears In:")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .padding(.top)
                     
-                ForEach(character.movies, id: \.self) { movies in
-                    Text("· " + movies)
-                        .padding(.top, 2)
-                        .font(Font.custom("OpenSans", size: 16))
-                }
-                
-                //Movie Description
-                Text("Movie Moments:")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.top)
-                
-                ForEach(character.movieScenes, id: \.self) { scenes in
-                    Text(scenes.movie)
-                        .padding(.vertical, 2)
+                    //Appears in
+                    Text("Appears In:")
                         .font(.title3)
-                        .fontWeight(.semibold)
+                        .fontWeight(.bold)
+                        .padding(.top)
                     
-                    Text(scenes.sceneDescription)
-                        .padding(.vertical, 2)
-                        .font(Font.custom("OpenSans", size: 16))
+                    ForEach(character.movies, id: \.self) { movies in
+                        Text("· " + movies)
+                            .padding(.top, 2)
+                            .font(Font.custom("OpenSans", size: 16))
+                    }
+                    
+                    //Movie Description
+                    Text("Movie Moments:")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.top)
+                    
+                    ForEach(character.movieScenes, id: \.self) { scenes in
+                        Text(scenes.movie)
+                            .padding(.vertical, 2)
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        
+                        Text(scenes.sceneDescription)
+                            .padding(.vertical, 2)
+                            .font(Font.custom("OpenSans", size: 16))
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("Read more:")
+                        Link(character.link, destination: URL(string: character.link)!)
+                            .font(.caption)
+                            .foregroundStyle(.blue.opacity(0.7))
+                    }
+                    .padding(.vertical, 2)
                 }
-                
-                VStack(alignment: .leading) {
-                    Text("Read more:")
-                    Link(character.link, destination: URL(string: character.link)!)
-                        .font(.caption)
-                        .foregroundStyle(.blue.opacity(0.7))
-                }
-                .padding(.vertical, 2)
+                .padding()
             }
-            .padding()
+            .scrollIndicators(.hidden)
         }
-        .scrollIndicators(.hidden)
     }
 }
 
