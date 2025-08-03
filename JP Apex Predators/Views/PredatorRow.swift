@@ -12,31 +12,35 @@ struct PredatorRow: View {
     let predator: ApexPredator
     
     var body: some View {
-        HStack{
+        HStack(spacing: 16) {
+            // Image with soft shadow and rounded corners
             Image(predator.image)
                 .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-                .shadow(color: .white, radius: 1, x: 0, y: 0)
+                .scaledToFill()
+                .frame(width: 80, height: 80)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
             
-            VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 8) {
                 Text(predator.name)
+                    .font(.headline)
                     .fontWeight(.bold)
                 
                 Text(predator.type.rawValue.capitalized)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                    .padding(.horizontal, 13)
-                    .padding(.vertical, 5)
-                    .background(predator.type.background)
-                    .clipShape(.capsule)
+                    .font(.caption)
+                    .fontWeight(.semibold)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(predator.type.background.opacity(0.3))
+                    .foregroundStyle(predator.type.background)
+                    .clipShape(Capsule())
             }
+            
+            Spacer()
         }
+        .padding(.vertical, 8)
+        .padding(.horizontal)
+        .background(Color(.systemGray6).opacity(0.2))
+        .clipShape(RoundedRectangle(cornerRadius: 18))
     }
-}
-
-#Preview {
-    PredatorRow(predator: PredatorController().apexPredators[2])
-        .preferredColorScheme(.dark)
-        //.previewLayout(.sizeThatFits)
 }

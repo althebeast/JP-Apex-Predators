@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  JP Apex Predators
+//
+//  Created by Alperen Sarışan on 4.09.2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = 4b0e5a6d89f8dcc084a926adc60a7725

@@ -17,6 +17,8 @@ struct PredatorDetail: View {
     let imageTip = DetailTip()
     
     @State var position: MapCameraPosition
+    @State private var animateSound = false
+    @State private var dragAmount = CGSize.zero
     
     @Environment(\.requestReview) var requestReview
     @Environment(PaywallViewModel.self) var paywallViewModel
@@ -37,20 +39,19 @@ struct PredatorDetail: View {
                                 Gradient.Stop(color: .clear, location: 0.8),
                                 Gradient.Stop(color: .black, location: 1)
                             ],
-                                           startPoint: .top,
-                                           endPoint: .bottom)
+                            startPoint: .top,
+                            endPoint: .bottom)
                         }
-                    
-                    //Dino Image
-                    NavigationLink{
+
+                    // Dino Image with interactive 3D effect
+                    NavigationLink {
                         withAnimation {
                             VStack {
-                                HStack() {
+                                HStack {
                                     Image(predator.image)
                                         .resizable()
                                         .scaledToFit()
                                         .scaleEffect(x: -1)
-                                    
                                     VStack(alignment: .trailing) {
                                         Button {
                                             if paywallViewModel.isSubsriptionActive {
@@ -63,7 +64,6 @@ struct PredatorDetail: View {
                                             Image(systemName: "arrow.down.circle.fill")
                                                 .font(.title)
                                         }
-                                        
                                         Spacer()
                                     }
                                     .padding()
@@ -71,30 +71,51 @@ struct PredatorDetail: View {
                             }
                         }
                     } label: {
-                        if geo.size.height > geo.size.width {
-                            Image(predator.image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: geo.size.width/1.5, height: geo.size.height/3)
-                                .scaleEffect(x: -1)
-                                .shadow(color: .black, radius: 7)
-                                .offset(y: 20)
-                        } else {
-                            Image(predator.image)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: geo.size.width/1.8, height: geo.size.height/1.4)
-                                .scaleEffect(x: -1)
-                                .shadow(color: .black, radius: 7)
-                                .offset(y: 20)
+                        GeometryReader { geo in
+                            ZStack {
+                                Image(predator.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(
+                                        width: geo.size.height > geo.size.width ? geo.size.width / 1.5 : geo.size.width / 1.8,
+                                        height: geo.size.height > geo.size.width ? geo.size.height / 3 : geo.size.height / 1.4
+                                    )
+                                    .scaleEffect(x: -1)
+                                    // Interactive 3D rotation based on drag
+                                    .rotation3DEffect(
+                                        .degrees(Double(dragAmount.height) / 10),
+                                        axis: (x: 1, y: 0, z: 0)
+                                    )
+                                    .rotation3DEffect(
+                                        .degrees(Double(-dragAmount.width) / 10),
+                                        axis: (x: 0, y: 1, z: 0)
+                                    )
+                                    .scaleEffect(1.05)
+                                    .shadow(color: .black.opacity(0.8), radius: 10, x: 0, y: 10)
+                                    .shadow(color: .gray.opacity(0.3), radius: 5, x: -5, y: -5)
+                                    .offset(y: 20)
+                                    .animation(.easeOut(duration: 0.3), value: dragAmount)
+                                    .gesture(
+                                        DragGesture()
+                                            .onChanged { value in
+                                                dragAmount = value.translation
+                                            }
+                                            .onEnded { _ in
+                                                dragAmount = .zero
+                                            }
+                                    )
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: geo.size.height > geo.size.width ? geo.size.height / 3 + 40 : geo.size.height / 1.4 + 40)
+                            .contentShape(Rectangle()) // To ensure whole area is tappable
                         }
+                        .frame(height:  geo.size.height > geo.size.width ? geo.size.height / 3 + 40 : geo.size.height / 1.4 + 40)
                     }
                     .popoverTip(imageTip, arrowEdge: .trailing)
                 }
                 .task {
                     try? Tips.configure()
                 }
-                    
+                
                 VStack(alignment: .leading){
                     // Dino name
                     HStack {
@@ -113,7 +134,13 @@ struct PredatorDetail: View {
                             } label: {
                                 Image(systemName: "waveform")
                                     .font(.largeTitle)
-                                    .foregroundStyle(Color("WaveButton"))
+                                    .foregroundColor(.green)
+                                    .shadow(color: .green.opacity(0.7), radius: animateSound ? 20 : 5)
+                                    .scaleEffect(animateSound ? 1.2 : 1)
+                                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: animateSound)
+                            }
+                            .onAppear {
+                                animateSound = true
                             }
                         } else {
                             
@@ -154,64 +181,80 @@ struct PredatorDetail: View {
                         .clipShape(.rect(cornerRadius: 15))
                     }
                     
-                    //dinosaur characteristics
-                    Text("Dinosaur Characteristics:")
-                        .font(.title3)
-                        .padding(.top)
-                    
-                    ForEach(predator.specs, id: \.self) { specs in
-                        Text("•" + specs)
-                            .font(.subheadline)
-                    }
-                    
-                    //Appears in
-                    Text("Appears In:")
-                        .font(.title3)
-                        .padding(.top)
-                    
-                    ForEach(predator.movies, id: \.self) { movie in
-                        Text("•" + movie)
-                            .font(.subheadline)
-                    }
-                    
-                    //Movie moments
-                        Text("Movie Moments")
-                            .font(.title)
-                            .padding(.top, 15)
-                        
-                        ForEach(predator.movieScenes, id: \.self) {scene in
-                            Text(scene.movie)
-                                .font(.title2)
-                                .bold()
-                                .padding(.vertical, 1)
-                            
-                            Text(scene.sceneDescription)
-                                .padding(.bottom, 15)
+                    Group {
+                        sectionTitle("Dinosaur Characteristics")
+                        ForEach(predator.specs, id: \.self) { spec in
+                            bulletPoint(spec)
                         }
-                        
-                        //Link to webpage
-                        Text("Read More:")
-                            .font(.caption)
-                        
-                        Link(predator.link, destination: URL(string: predator.link)!)
-                            .font(.caption)
-                            .foregroundStyle(.blue)
                     }
-                    .padding()
-                    .padding(.bottom, 100)
-                    .frame(width: geo.size.width, alignment: .leading)
-                    .onAppear {
-//                        requestReview()
+                    
+                    Group {
+                        sectionTitle("Appears In")
+                        ForEach(predator.movies, id: \.self) { movie in
+                            bulletPoint(movie)
+                        }
                     }
+                    
+                    Group {
+                        sectionTitle("Movie Moments")
+                        ForEach(predator.movieScenes, id: \.self) { scene in
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(scene.movie)
+                                    .font(.title2)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                Text(scene.sceneDescription)
+                                    .foregroundColor(.white.opacity(0.8))
+                                    .padding(.horizontal)
+                            }
+                            .padding(.vertical, 5)
+                            .background(Color("CardBackground").opacity(0.3))
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                            .shadow(color: .black.opacity(0.6), radius: 5, x: 0, y: 3)
+                            .transition(.opacity.combined(with: .slide))
+                        }
+                    }
+                    
+                    Group {
+                        sectionTitle("Read More")
+                        Link(destination: URL(string: predator.link)!) {
+                            Text(predator.link)
+                                .font(.caption)
+                                .underline()
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    .padding(.bottom, 40)
                 }
-                .ignoresSafeArea()
-            }
-            .toolbarBackground(.automatic)
-            .sheet(isPresented: $vm.isPaywallPresented) {
-                Paywall()
+                .foregroundColor(.white)
+                .animation(.easeInOut, value: predator)
             }
         }
     }
+}
+
+@ViewBuilder
+func sectionTitle(_ text: String) -> some View {
+    Text(text)
+        .font(.title3)
+        .fontWeight(.semibold)
+        .foregroundColor(.white.opacity(0.9))
+        .padding(.vertical, 5)
+}
+
+@ViewBuilder
+func bulletPoint(_ text: String) -> some View {
+    HStack(alignment: .top, spacing: 8) {
+        Text("•")
+            .font(.headline)
+            .foregroundColor(.green)
+        Text(text)
+            .font(.subheadline)
+            .foregroundColor(.white.opacity(0.85))
+            .fixedSize(horizontal: false, vertical: true)
+    }
+    .padding(.vertical, 2)
+}
     
     #Preview {
         NavigationStack{

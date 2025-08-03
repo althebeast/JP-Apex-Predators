@@ -165,5 +165,5 @@ enum PredatorSound: String, Codable {
             nil
         }
     }
-    
 }
+
