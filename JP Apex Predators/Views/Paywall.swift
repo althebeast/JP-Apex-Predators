@@ -9,138 +9,172 @@ import SwiftUI
 import RevenueCat
 
 struct Paywall: View {
-    
     @State var currentOffering: Offering?
-    
     @Environment(PaywallViewModel.self) var paywallViewModel
     
+    @State private var isPurchasing = false
+    @State private var selectedPackageId: String?
+
     var body: some View {
         GeometryReader { geo in
             ZStack {
+                // Background gradient
+                LinearGradient(
+                    colors: [Color("firstGradientColor"), Color("secondGradientColor")],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
                 
-                LinearGradient(colors: [Color("firstGradientColor"), Color("secondGradientColor")], startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
-                
-                VStack {
+                VStack(spacing: 25) {
                     Spacer()
                     
+                    // App Icon or Illustration
                     Image("appstore")
                         .resizable()
                         .scaledToFit()
+                        .frame(width: 180, height: 180)
                         .clipShape(RoundedRectangle(cornerRadius: 25))
-                        .frame(width: 200, height: 200)
+                        .shadow(color: .black.opacity(0.4), radius: 12, x: 0, y: 8)
+                        .padding(.top)
                     
-                    Spacer()
+                    // Title
+                    Text("Unlock Premium")
+                        .font(.system(size: 32, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                        .shadow(color: .black.opacity(0.7), radius: 3, x: 0, y: 1)
                     
-                    Text("Become a Premium Now")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .foregroundStyle(.white)
-                        .multilineTextAlignment(.leading)
-                        .padding([.horizontal, .bottom], 10)
-                    
-                    Text("What's included?")
+                    // Subtitle
+                    Text("Get access to all dinosaurs, sounds, images, and maps!")
                         .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
+                        .foregroundColor(.white.opacity(0.8))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .padding(.horizontal, 30)
+                    
+                    // Benefits List
+                    benefitsList
+                        .padding(.horizontal)
                     
                     Spacer()
                     
-                    VStack(alignment: .leading, spacing: 20) {
-                        HStack {
-                            Image(systemName: "checkmark.seal.fill")
-                            Text("Get to see all 21 Dinosours")
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-                        
-                        HStack {
-                            Image(systemName: "checkmark.seal.fill")
-                            Text("Hear how dinosours sounded")
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-                        
-                        HStack {
-                            Image(systemName: "checkmark.seal.fill")
-                            Text("Save all dinosour images on your phone")
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-                        
-                        HStack {
-                            Image(systemName: "checkmark.seal.fill")
-                            Text("See all dinasours places in the map")
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 20)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding(.horizontal, 10)
-                    
-                    Spacer()
-                    
-                    if currentOffering != nil {
-                        ForEach(currentOffering!.availablePackages) { pkg in
-                            Button {
-                                
-                                Purchases.shared.purchase(package: pkg) { (transaction, customerInfo, error, userCancelled) in
-                                    
-                                    if customerInfo?.entitlements["Pro"]?.isActive == true {
-                                        // Unlock that great "pro" content
-                                        
-                                        paywallViewModel.isSubsriptionActive = true
-                                        paywallViewModel.isPaywallPresented = false
-                                    }
-                                }
-                                
-                                
-                            } label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .frame(height: 55)
-                                        .foregroundStyle(LinearGradient(stops: [.init(color: Color("Paywall2"), location: 0), .init(color: Color("Paywall1"), location: 1)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                                        .shadow(color: .white, radius: 5)
-                                    
-                                    Text("Become Premium Now For Only \(pkg.storeProduct.localizedPriceString)")
-                                        .fontWeight(.semibold)
-                                        .foregroundStyle(.white)
-                                }
+                    // Purchase buttons
+                    if let offering = currentOffering {
+                        VStack(spacing: 15) {
+                            ForEach(offering.availablePackages) { package in
+                                purchaseButton(for: package)
                             }
-                            .padding(.horizontal)
                         }
+                        .padding(.horizontal)
+                    } else {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
                     }
                     
-                    Button {
-                        Purchases.shared.restorePurchases { ( customerInfo, error ) in
-                            
-                            paywallViewModel.isSubsriptionActive =  customerInfo?.entitlements.all["Pro"]?.isActive == true
-                        }
-                    } label: {
+                    // Restore Purchases
+                    Button(action: restorePurchases) {
                         Text("Restore Purchases")
-                            .font(.caption2)
+                            .font(.footnote)
                             .fontWeight(.semibold)
-                            .padding(.vertical, 10)
-                            .foregroundStyle(.white)
+                            .foregroundColor(.white.opacity(0.8))
+                            .padding(.top, 10)
                     }
                     
-                    
-                    Spacer()
+                    Spacer(minLength: 30)
                 }
-                .onAppear {
-                    Purchases.shared.getOfferings { offerings, error in
-                        
-                        if let offer = offerings?.current, error == nil {
-                            
-                            currentOffering = offer
-                        }
-                    }
-                }
+                .frame(width: geo.size.width)
             }
-            .frame(width: geo.size.width)
+            .onAppear(perform: loadOfferings)
+        }
+    }
+    
+    // MARK: - Benefits List View
+    var benefitsList: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            benefitRow(icon: "checkmark.seal.fill", text: "Unlock all 21 dinosaurs")
+            benefitRow(icon: "checkmark.seal.fill", text: "Hear authentic dinosaur sounds")
+            benefitRow(icon: "checkmark.seal.fill", text: "Save images directly to your device")
+            benefitRow(icon: "checkmark.seal.fill", text: "Explore dinosaurs’ locations on the map")
+        }
+        .padding()
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 5)
+    }
+    
+    // Benefit row helper
+    func benefitRow(icon: String, text: String) -> some View {
+        HStack(spacing: 12) {
+            Image(systemName: icon)
+                .foregroundColor(.green)
+                .font(.title3)
+            Text(text)
+                .foregroundColor(.white.opacity(0.9))
+                .font(.body)
+                .fixedSize(horizontal: false, vertical: true)
+            Spacer()
+        }
+    }
+    
+    // MARK: - Purchase Button View
+    func purchaseButton(for package: Package) -> some View {
+        Button {
+            purchase(package: package)
+        } label: {
+            Text("Unlock Premium for \(package.storeProduct.localizedPriceString)")
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(
+                    LinearGradient(
+                        colors: selectedPackageId == package.identifier
+                            ? [Color("Paywall2").opacity(0.85), Color("Paywall1").opacity(0.85)]
+                            : [Color("Paywall1"), Color("Paywall2")],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .cornerRadius(15)
+                .shadow(color: .black.opacity(0.5), radius: 8, x: 0, y: 4)
+                .scaleEffect(selectedPackageId == package.identifier ? 1.05 : 1)
+                .animation(.easeInOut(duration: 0.25), value: selectedPackageId)
+        }
+        .disabled(isPurchasing)
+    }
+    
+    // MARK: - Load Offerings
+    func loadOfferings() {
+        Purchases.shared.getOfferings { offerings, error in
+            if let offer = offerings?.current, error == nil {
+                currentOffering = offer
+            }
+        }
+    }
+    
+    // MARK: - Purchase Handling
+    func purchase(package: Package) {
+        isPurchasing = true
+        selectedPackageId = package.identifier
+        
+        Purchases.shared.purchase(package: package) { transaction, customerInfo, error, userCancelled in
+            isPurchasing = false
+            selectedPackageId = nil
+            
+            if let customerInfo = customerInfo,
+               customerInfo.entitlements["Pro"]?.isActive == true {
+                paywallViewModel.isSubsriptionActive = true
+                paywallViewModel.isPaywallPresented = false
+            }
+        }
+    }
+    
+    // MARK: - Restore Purchases
+    func restorePurchases() {
+        Purchases.shared.restorePurchases { customerInfo, error in
+            if let customerInfo = customerInfo {
+                paywallViewModel.isSubsriptionActive = customerInfo.entitlements.all["Pro"]?.isActive == true
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ struct ContentView: View {
                 ScrollView(showsIndicators: false) {
                     dinosList(geo: geo)
                 }
+                .background(Color.black) // Dark background
                 .navigationTitle("Jurassic Journey")
                 .searchable(text: $vm.searchText)
                 .autocorrectionDisabled()
@@ -72,6 +73,15 @@ struct ContentView: View {
     private func paywallLink(for predator: ApexPredator, geo: GeometryProxy) -> some View {
         NavigationLink(destination: Paywall()) {
             PredatorCard(predator: predator)
+                .blur(radius: 5)
+                .overlay(
+                    Color.black.opacity(0.3)
+                        .overlay(
+                            Text("Unlock with Premium")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                        )
+                )
         }
         .frame(width: geo.size.width)
     }
@@ -83,9 +93,7 @@ struct ContentView: View {
                 position: .camera(MapCamera(centerCoordinate: predator.location, distance: 2000))
             )
         ) {
-            withAnimation {
-                PredatorCard(predator: predator)
-            }
+            PredatorCard(predator: predator)
         }
         .frame(width: geo.size.width)
     }
