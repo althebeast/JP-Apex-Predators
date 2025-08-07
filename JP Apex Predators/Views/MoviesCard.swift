@@ -9,132 +9,139 @@ import SwiftUI
 import CachedAsyncImage
 
 struct MoviesCard: View {
-    
-    @Environment(MovieViewModel.self) var movievm
-    
+    @Environment(MoviesViewModel.self) var movievm
     @State var selectedImage: Part?
-    
-    var newDate:DateFormatter {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeZone = .current
-        
-        return dateFormatter
+
+    var newDate: DateFormatter {
+        let df = DateFormatter()
+        df.dateStyle = .medium
+        return df
     }
-    
+
     var body: some View {
-        
-        @Bindable var vm = MovieViewModel()
-        
-        GeometryReader { geo in
         NavigationView {
             ZStack {
-                
                 if !movievm.isInternetAvailable() {
-                    NoMoviesView(firstTitle: "Looks like there's a problem with your connection 🧐",
-                                 buttonTitle: "Try Again")
-                    .transition(.asymmetric(
-                        insertion: AnyTransition.opacity.animation(.easeIn),
-                        removal: .move(edge: .leading)))
+                    NoMoviesView(
+                        firstTitle: "Looks like there's a problem with your connection 🧐",
+                        buttonTitle: "Try Again"
+                    )
+                    .transition(.opacity.combined(with: .scale))
                 } else {
-                    VStack(spacing: 0) {
-                            List(movievm.parts) { part in
-                                VStack {
-                                    
-                                    CachedAsyncImage(url: part.imageURL) { image in
-                                        switch image {
-                                        case .empty:
-                                            HStack {
-                                                Spacer()
-                                                ProgressView()
-                                                Spacer()
-                                            }
-                                        case .success(let image):
-                                            if geo.size.height > 1000 || geo.size.width > geo.size.height {
-                                                image
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(height: geo.size.height/1.5)
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                            } else {
-                                                image
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                            }
-                                        case .failure:
-                                            HStack {
-                                                Spacer()
-                                                Image(systemName: "photo")
-                                                    .imageScale(.large)
-                                                Spacer()
-                                            }
-                                        @unknown default:
-                                            fatalError()
-                                        }
-                                    }
-                                    .padding(.bottom, 10)
-                                    .onTapGesture {
-                                        selectedImage = part
-                                    }
-                                    
-                                    HStack {
-                                        Text(part.title)
-                                            .font(.title2)
-                                            .bold()
-                                        .padding(.bottom, 10)
-                                        
-                                        Spacer()
-                                    }
-                                    
-                                    Text(part.overview)
-                                        .padding(.bottom, 10)
-                                        .font(.subheadline)
-                                    
-                                    HStack {
-                                        Text("Rating: \(part.voteAverage, specifier: "%.1f")")
-                                            .font(.callout)
-                                            .fontWeight(.semibold)
-                                        
-                                        Spacer()
-
-                                        Text("Release Date: \(newDate.string(from: part.releaseDate))")
-                                            .font(.callout)
-                                            .fontWeight(.semibold)
-                                    }
-                                    .padding(.bottom, 10)
-                                    Divider()
-                                        .padding(.bottom, 10)
+                    ScrollView {
+                        LazyVStack(spacing: 24) {
+                            ForEach(movievm.movies) { part in
+                                MoviePosterCard(part: part) {
+                                    selectedImage = part
                                 }
-                                .padding(.horizontal)
-                                .multilineTextAlignment(.leading)
-                                .listRowSeparator(.hidden)
-                            }
-                            .scrollIndicators(.hidden)
-                            .listStyle(.plain)
-                            .refreshable {
-                                movievm.fetcData()
                             }
                         }
+                        .padding(.vertical)
+                    }
+                    .scrollIndicators(.hidden)
+                    .refreshable {
+                        await movievm.fetchData()
+                    }
                 }
             }
             .onAppear {
-                movievm.fetcData()
+                Task {
+                    await movievm.fetchData()
+                }
+            }
+            .refreshable {
+                await movievm.fetchData()
             }
             .navigationTitle("Jurassic Park Movies")
-            }
         }
         .navigationViewStyle(.stack)
-        .sheet(item: $selectedImage) { j in
-            MovieImageSheetView(imageToShow: j)
+        .sheet(item: $selectedImage) { part in
+            MovieImageSheetView(imageToShow: part)
         }
     }
 }
 
-#Preview {
-    MoviesCard()
-        .environment(MovieViewModel())
-        .preferredColorScheme(.dark)
+struct MoviePosterCard: View {
+    let part: Part
+    var onTap: () -> Void
+
+    var newDate: DateFormatter {
+        let df = DateFormatter()
+        df.dateStyle = .medium
+        return df
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ZStack(alignment: .bottomLeading) {
+                // Poster Image
+                CachedAsyncImage(url: part.imageURL) { image in
+                    switch image {
+                    case .empty:
+                        ZStack {
+                            Color.gray.opacity(0.3)
+                            ProgressView()
+                        }
+                    case .success(let img):
+                        img
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding()
+                            .overlay(
+                                LinearGradient(
+                                    colors: [.black.opacity(0.8), .clear],
+                                    startPoint: .bottom,
+                                    endPoint: .center
+                                )
+                            )
+                    case .failure:
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 300)
+                            .foregroundColor(.gray)
+                    @unknown default:
+                        EmptyView()
+                    }
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .shadow(radius: 10)
+
+                // Text overlay
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(part.title)
+                        .font(.title2.bold())
+                        .foregroundColor(.white)
+
+                    HStack(spacing: 12) {
+                        RatingBadge(rating: part.imdbRating)
+                        Text(newDate.string(from: part.released))
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.85))
+                    }
+                }
+                .padding()
+            }
+            .onTapGesture {
+                onTap()
+            }
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct RatingBadge: View {
+    let rating: Double
+
+    var body: some View {
+        Text(String(format: "%.1f", rating))
+            .font(.caption.bold())
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Color.yellow)
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .foregroundColor(.black)
+            .shadow(radius: 2)
+    }
 }

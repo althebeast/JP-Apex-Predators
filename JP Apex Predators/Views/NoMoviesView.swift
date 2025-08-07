@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoMoviesView: View {
     
-    @Environment(MovieViewModel.self) var movievm
+    @Environment(MoviesViewModel.self) var movievm
     
     var firstTitle: String
     var buttonTitle: String
@@ -67,10 +67,4 @@ struct NoMoviesView: View {
             }
         }
     }
-}
-
-#Preview {
-    NoMoviesView(firstTitle: "Looks like there's a problem with your connection 🧐", buttonTitle: "Try Again")
-        .environment(MovieViewModel())
-        .preferredColorScheme(.dark)
 }

@@ -14,7 +14,7 @@ struct JP_Apex_PredatorsApp: App {
     @AppStorage("isLightMode") private var isLightMode = false
     @State var viewModel = ViewModel()
     @State var bookmarkvm = BookmarkViewModel()
-    @State var movievm = MovieViewModel()
+    @State var movievm = MoviesViewModel()
     @State var paywallVm = PaywallViewModel()
     @State var characterVm = CharacterViewModel()
     
@@ -23,7 +23,7 @@ struct JP_Apex_PredatorsApp: App {
             PredatorTabView()
                 .environment(ViewModel())
                 .environment(BookmarkViewModel())
-                .environment(MovieViewModel())
+                .environment(MoviesViewModel())
                 .environment(PaywallViewModel())
                 .environment(CharacterViewModel())
                 .preferredColorScheme(isLightMode ? .light : .dark)

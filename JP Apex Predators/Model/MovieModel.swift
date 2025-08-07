@@ -7,54 +7,51 @@
 
 import Foundation
 
-struct MovieModel: Decodable, Identifiable {
-    
-    var id: Int
-    var name: String
-    var overview: String
-    var posterPath: String
-    var parts: [Part]
-    
-    enum CodingKeys: String, CodingKey {
-        
-        case posterPath = "poster_path"
-        
-        case id
-        case name
-        case overview
-        case parts
-        
-    }
-    
-}
-
-struct Part: Decodable, Identifiable {
-    
-    var id: Int
-    var title: String
-    var overview: String
-    var posterPath: String?
-    var releaseDate: Date
-    var voteAverage: Double
+struct Part: Identifiable, Codable {
+    let id = UUID()
+    let title: String
+    let released: Date
+    let imdbRating: Double
+    let plot: String
+    let poster: String
+    let genre: String
+    let director: String
+    let awards: String
     
     enum CodingKeys: String, CodingKey {
-        
-        case posterPath = "poster_path"
-        case releaseDate = "release_date"
-        case voteAverage = "vote_average"
-        
-        case id
-        case title
-        case overview
+        case title = "Title"
+        case released = "Released"
+        case imdbRating
+        case plot = "Plot"
+        case poster = "Poster"
+        case genre = "Genre"
+        case director = "Director"
+        case awards = "Awards"
     }
     
     var imageURL: URL? {
-        guard let posterPath else {
-            return nil
-        }
-        
-        let fullImage = "https://image.tmdb.org/t/p/w500\(posterPath)"
-        
-        return URL(string: fullImage)
+        URL(string: poster)
     }
-}
+    
+    init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            title = try container.decode(String.self, forKey: .title)
+            
+            // Released date parsing
+            let releasedString = try container.decode(String.self, forKey: .released)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd MMM yyyy"
+            released = formatter.date(from: releasedString) ?? Date.distantPast
+            
+            // imdbRating parsing
+            let ratingString = try container.decode(String.self, forKey: .imdbRating)
+            imdbRating = Double(ratingString) ?? 0.0
+            
+            plot = try container.decode(String.self, forKey: .plot)
+            poster = try container.decode(String.self, forKey: .poster)
+            genre = try container.decode(String.self, forKey: .genre)
+            director = try container.decode(String.self, forKey: .director)
+            awards = try container.decode(String.self, forKey: .awards)
+        }
+    }
