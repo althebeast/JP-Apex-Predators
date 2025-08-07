@@ -10,7 +10,9 @@ import SwiftUI
 struct PredatorCard: View {
     let predator: ApexPredator
     @Environment(BookmarkViewModel.self) var bookmarkVm
+    
     @State private var isPressed: Bool = false
+    @State private var isBookmarked: Bool = false
     
     var body: some View {
         NavigationLink(destination: PredatorDetail(predator: predator, position: .automatic)) {
@@ -55,12 +57,31 @@ struct PredatorCard: View {
                             axis: (x: 0.5, y: -0.5, z: 0)
                         )
                         .animation(.spring(response: 0.4, dampingFraction: 0.6), value: isPressed)
+                        .shadow(color: .white, radius: 0.6)
                     
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(predator.name)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
+                        HStack {
+                            Text(predator.name)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                            
+                            Button {
+                                if bookmarkVm.isBookmarked(for: predator) {
+                                    bookmarkVm.removeBookmark(for: predator)
+                                    isBookmarked = false
+                                } else {
+                                    bookmarkVm.addBookmark(for: predator)
+                                    isBookmarked = true
+                                }
+                            } label: {
+                                Image(systemName: isBookmarked ? "star.fill" : "star")
+                            }
+                            .onAppear {
+                                isBookmarked = bookmarkVm.isBookmarked(for: predator)
+                            }
+                        }
+
                         
                         Text(predator.type.rawValue.capitalized)
                             .font(.subheadline)

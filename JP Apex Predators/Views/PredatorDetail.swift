@@ -146,6 +146,7 @@ struct PredatorDetail: View {
                             
                         }
                     }
+                    .padding(.horizontal)
                     
                     //Current location
                     NavigationLink {
@@ -187,6 +188,7 @@ struct PredatorDetail: View {
                             bulletPoint(spec)
                         }
                     }
+                    .padding(.horizontal)
                     
                     Group {
                         sectionTitle("Appears In")
@@ -194,6 +196,7 @@ struct PredatorDetail: View {
                             bulletPoint(movie)
                         }
                     }
+                    .padding(.horizontal)
                     
                     Group {
                         sectionTitle("Movie Moments")
@@ -205,7 +208,6 @@ struct PredatorDetail: View {
                                     .foregroundColor(.white)
                                 Text(scene.sceneDescription)
                                     .foregroundColor(.white.opacity(0.8))
-                                    .padding(.horizontal)
                             }
                             .padding(.vertical, 5)
                             .background(Color("CardBackground").opacity(0.3))
@@ -214,6 +216,7 @@ struct PredatorDetail: View {
                             .transition(.opacity.combined(with: .slide))
                         }
                     }
+                    .padding(.horizontal)
                     
                     Group {
                         sectionTitle("Read More")
@@ -224,6 +227,7 @@ struct PredatorDetail: View {
                                 .foregroundColor(.blue)
                         }
                     }
+                    .padding(.horizontal)
                     .padding(.bottom, 40)
                 }
                 .foregroundColor(.white)
