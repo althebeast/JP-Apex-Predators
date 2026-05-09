@@ -53,7 +53,8 @@ class MoviesViewModel {
             "Jurassic Park III",
             "Jurassic World",
             "Jurassic World: Fallen Kingdom",
-            "Jurassic World Dominion"
+            "Jurassic World Dominion",
+            "Jurassic World Rebirth"
         ]
         
         var loadedMovies: [Part] = []

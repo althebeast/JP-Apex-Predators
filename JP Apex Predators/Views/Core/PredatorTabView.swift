@@ -21,14 +21,6 @@ struct PredatorTabView: View {
                     }
                 }
             
-            CharacterCard()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "person.2.crop.square.stack.fill")
-                        Text("Characters")
-                    }
-                }
-            
             MoviesCard()
                 .tabItem {
                     VStack {
@@ -36,6 +28,14 @@ struct PredatorTabView: View {
                         Text("Movies")
                     }
                     .foregroundStyle(isLightMode ? .black : .white)
+                }
+            
+            CharacterCard()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.2.crop.square.stack.fill")
+                        Text("Characters")
+                    }
                 }
                 
             
